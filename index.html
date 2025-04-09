@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareInvest</title>
+    
+    <link rel="icon" type="image/png" href="assets/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="CareInvest" />
+    <link rel="manifest" href="/assets/favicon/site.webmanifest">
+
+    
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body> 
+    <header class="header">
+        <nav class="header__nav">
+            <div class="nav__logo">
+                <img src="assets/logo_CareInvest.svg" alt="Logo_CareInvest" class="nav__logo-img">
+            </div>
+            <div class="nav__onglets">
+                <button class="nav__onglets-button">
+                    MA SITUATION
+                </button>
+                <button class="nav__onglets-button">
+                    MON PROJET
+                </button>
+                <button class="nav__onglets-button">
+                    MES SIMULATEURS
+                </button>
+                <button class="nav__onglets-button">
+                    MON HISTORIQUE
+                </button>
+            </div>
+            <div class="nav__auth">
+                <button class="nav_auth-button nav__auth-button--signin">
+                    Connexion
+                </button>
+                <button class="nav_auth-button nav__auth-button--signup">
+                    Essayer CareInvest
+                </button>
+            </div>
+            <div class="nav__mobile-menu" id="navMobileMenu">
+                <img src="assets/menu.svg" alt="Menu">
+            </div>
+        </nav>
+    </header>
+
+
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu__close" id="mobileMenuClose">&times;</button>
+        <nav class="mobile-menu__nav">
+            <button class="nav_auth-menu-button nav__auth-button--signin">
+                Connexion
+            </button>
+            <button class="nav_auth-menu-button nav__auth-button--signup">
+                Essayer CareInvest
+            </button>
+            <button class="nav_auth-button nav__onglets--onglet">
+                Mes simulateurs
+            </button>
+            <button class="nav_auth-button nav__onglets--onglet">
+                Mon projet
+            </button>
+            <button class="nav_auth-button nav__onglets--onglet">
+                Ma situation
+            </button>
+            <button class="nav_auth-button nav__onglets--onglet">
+                Mon historique
+            </button>
+        </nav>
+    </div>
+
+    
+    <main class="main">
+        <div class="main__container">
+            <div class="main__hero">
+                <div class="main__hero-uptitles"> 
+                    <p class="main__hero-title">
+                        Etudiez votre projet locatif de A à Z
+                    </p>
+                    <p class="main__hero-title-mobile">
+                        Etudiez votre projet locatif de A à Z
+                    </p>
+                    <p class="main__hero-description">
+                        Care Invest, votre outil de simulations pour maîtriser <br> les enjeux fiscaux et financiers de votre projet locatif
+                    </p>
+                    <p class="main__hero-description-mobile">
+                        Care Invest <br /> Maitrisez votre projet locatif 
+                    </p>
+                </div>
+                <div class="main__hero_subtitles">
+                    <p class="main__hero_subtitle">
+                        Soyez maître votre projet en 3 étapes
+                    </p>
+                </div>
+            </div>
+
+            <div class="main__hero_subtitles-bigscreen">
+                <p class="main__hero_subtitle-bigscreen">
+                    Soyez maître votre projet en 3 étapes
+                </p>
+            </div>   
+            
+
+
+            <div class="main__content">
+                <div class="main__features">
+                    <div class="main__feature">
+                        <div class="main__feature-rec">
+                            <div class="main__feature--title">
+                                <p class="main__feature--title-up">
+                                    Maitre de
+                                </p>
+                                <p class="main__feature--title-down">
+                                    Ma situation
+                                </p>
+                            </div>
+                            <div class="main__feature--description">
+                                <div class="main__feature--subdescription">
+                                    <img src="/assets/features/coin.svg" alt="Logo_Coin" class="main__feature-logo">
+                                    <p class="main__feature-description-texts">
+                                        Ma capacité d'emprunt
+                                    </p>
+                                </div>
+                                <div class="main__feature--subdescription">
+                                    <img src="/assets/features/taux.svg" alt="Logo_Taux" class="main__feature-logo">
+                                    <p class="main__feature-description-texts">
+                                        Mon taux d'endettement
+                                    </p>
+                                </div>
+                                <div class="main__feature--subdescription">
+                                    <img src="/assets/features/mensualite.svg" alt="Logo_Mensualite" class="main__feature-logo">
+                                    <p class="main__feature-description-texts">
+                                        Ma mensualité
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main__feature--buttons">
+                            <button class="main__feature--button">
+                                Créer une situation
+                            </button>
+                        </div>
+                    </div>
+                    <div class="main__feature">
+                        <div class="main__feature-rec">
+                            <div class="main__feature--title">
+                                <p class="main__feature--title-up">
+                                    Maitre de
+                                </p>
+                                <p class="main__feature--title-down">
+                                    Mon projet
+                                </p>
+                            </div>
+                            <div class="main__feature--description">
+                                <div class="main__feature--subdescription">
+                                    <img src="/assets/features/rendement.svg" alt="Logo_Rendement" class="main__feature-logo">
+                                    <p class="main__feature-description-texts">
+                                        Rendement de mon projet
+                                    </p>
+                                </div>
+                                <div class="main__feature--subdescription">
+                                    <img src="/assets/features/imposition.svg" alt="Logo_Imposition" class="main__feature-logo">
+                                    <p class="main__feature-description-texts">
+                                        Mon imposition
+                                    </p>
+                                </div>
+                                <div class="main__feature--subdescription">
+                                    <img src="/assets/features/tresorerie.svg" alt="Logo_Tresorerie" class="main__feature-logo">
+                                    <p class="main__feature-description-texts">
+                                        Mon gain/effort de tresorerie
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main__feature--buttons">
+                            <button class="main__feature--button">
+                                Créer un projet
+                            </button>
+                        </div>
+                    </div>
+                    <div class="main__feature">
+                        <div class="main__feature-rec">
+                            <div class="main__feature--title">
+                                <p class="main__feature--title-up">
+                                    Maitre de
+                                </p>
+                                <p class="main__feature--title-down">
+                                    Ma fiscalité
+                                </p>
+                            </div>
+                            <div class="main__feature--description">
+                                <div class="main__feature--subdescription">
+                                    <img src="/assets/features/visibilite.svg" alt="Logo_Visibilité" class="main__feature-logo">
+                                    <p class="main__feature-description-texts">
+                                        Ma visibilité des projets
+                                    </p>
+                                </div>
+                                <div class="main__feature--subdescription">
+                                    <img src="/assets/features/taux.svg" alt="Logo_Taux" class="main__feature-logo">
+                                    <p class="main__feature-description-texts">
+                                        Mes différents régimes fiscaux
+                                    </p>
+                                </div>
+                                <div class="main__feature--subdescription">
+                                    <img src="/assets/features/mensualite.svg" alt="Logo_Mensualite" class="main__feature-logo">
+                                    <p class="main__feature-description-texts">
+                                        Mon optimisation
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main__feature--buttons">
+                            <button class="main__feature--button">
+                                Comparer les régimes fiscaux
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main__transition">
+
+            </div>
+
+
+            <div class="main__details">
+                <div class="main__detail" >
+                    <div class="main__detail-left main__detail-texts">
+                        <div class="main__detail-title">
+                            <p class="main__detail-title-text autoShow">
+                                Maître de ma situation
+                            </p>
+                        </div>
+                        <div class="main__detail-description">
+                            <p class="main__detail-description-text autoShow">
+                                Pour aller de l’avant, il est important de connaître et d’estimer sa propre situation. Quels sont nos atouts, nos limites et les projets qui peuvent en découler ? Ce constat est difficilement réalisable d’un point de vue interne.
+                            </p>
+                            <p class="main__detail-description-text autoShow">
+                                CareInvest vous permet d’élaborer votre projet en fonction de votre situation. Il calcule, pour vous, votre taux d’endettement, votre capacité d’emprunt et votre fiscalité. Il est le simulateur de votre situation avant et après la réalisation d’un projet.
+                            </p>
+                        </div>
+                        <div class="main__detail-create">
+                            <button class="main__detail-button autShow">
+                                Créer une situation
+                            </button>
+                        </div>
+                    </div>
+                    <div class="main__detail-right main__detail-recs">
+                        <div class="main__detail-space">
+                        </div>
+                        <div class="main__detail-rec">
+
+                        </div>
+                        <div class="main__detail-subtext-left">
+                            <p class="main__detail-subtext-text autoShow">
+                                Savoir d'où je viens pour savoir où je vais...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="main__detail" >
+                    <div class="main__detail-left main__detail-recs">
+                        <div class="main__detail-space">
+                        </div>
+                        <div class="main__detail-rec">
+
+                        </div>
+                        <div class="main__detail-subtext-right">
+                            <p class="main__detail-subtext-text autoShow">
+                                Savoir d'où je viens pour savoir où je vais...
+                            </p>
+                        </div>
+                    </div>
+                    <div class="main__detail-right main__detail-texts">
+                        <div class="main__detail-title">
+                            <p class="main__detail-title-text autoShow">
+                                Maître de mon projet
+                            </p>
+                        </div>
+                        <div class="main__detail-description">
+                            <p class="main__detail-description-text autoShow">
+                                Des affaires, il en existe plus que ce vous pouvez en acheter. Il est alors crucial d’acheter la bonne affaire et celle qui vous convient.
+                            </p>
+                            <p class="main__detail-description-text autoShow">
+                                CareInvest vous aide à faire votre choix en simulant le rendement de votre projet futur, les impôts qui vont en découler, le gain ou l’effort de trésorerie que vous allez devoir appréhender, le tout en fonction de votre situation et du choix de votre fiscalité.
+                            </p>
+                        </div>
+                        <div class="main__detail-create main__detail-button-left">
+                            <button class="main__detail-button">
+                                Créer un projet
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="main__detail" >
+                    <div class="main__detail-left main__detail-texts">
+                        <div class="main__detail-title">
+                            <p class="main__detail-title-text autoShow">
+                                Maître de ma fiscalité
+                            </p>
+                        </div>
+                        <div class="main__detail-description">
+                            <p class="main__detail-description-text autoShow">
+                                Il est très facile de se perdre dans la fiscalité. Ne pas prendre en compte sa fiscalité dans son projet locatif c’est comme se prendre un échec et mat après 4 coups dans une partie d’échecs, on ne voit pas le danger arriver mais une fois vu c’est déjà trop tard le mat est imparable...
+                            </p>
+                            <p class="main__detail-description-text autoShow">
+                                CareInvest vous permet d’avoir une visibilité claire, nette et précise des différents régimes fiscaux et opter pour celle qui convient le mieux en fonction de votre situation et de votre projet.
+                            </p>
+                        </div>
+                        <div class="main__detail-create">
+                            <button class="main__detail-button">
+                                Comparer les régimes fiscaux
+                            </button>
+                        </div>
+                    </div>
+                    <div class="main__detail-right main__detail-recs">
+                        <div class="main__detail-space">
+                        </div>
+                        <div class="main__detail-rec">
+
+                        </div>
+                        <div class="main__detail-subtext-left">
+                            <p class="main__detail-subtext-text autoShow">
+                                Savoir d'où je viens pour savoir où je vais...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </main>
+
+
+    <footer class="footer">
+       <div class="footer__container">
+            <div class="footer__legal">
+                <p class="footer__legal-item">&copy; 2025 CareInvest Corp</p>
+                <p class="footer__legal-item">Mentions Légales</p>
+                <p class="footer__legal-item">Politique de confidentialité</p>
+            </div>
+           
+            <div class="footer__info">
+                <div class="footer__logo">
+                    <img src="assets/favicon/favicon.ico" alt="Logo_CareInvest" class="footer__logo-img">
+                    <h3 class="footer__logo-title">CareInvest</h3>
+                </div>
+                <div class="footer__socials">
+                    <a href="https://www.linkedin.com" class="footer_social-link"><img src="assets/Socials/Linkedin_logo.svg" alt="LinkedIn" class="footer__social-icon"></a>
+                    <a href="https://x.com" class="footer_social-link"><img src="assets/Socials/X_logo.svg" alt="Twitter/X" class="footer__social-icon"></a>
+                    <a href="https://www.instagram.com" class="footer_social-link"><img src="assets/Socials/Instagram_logo.svg" alt="Instagram" class="footer__social-icon"></a>
+                    <a href="https://www.youtube.com" class="footer_social-link"><img src="assets/Socials/Youtube_Logo.svg" alt="Youtube" class="footer__social-icon footer__social-icon-YT"></a>
+                </div>
+            </div>
+       </div> 
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>
