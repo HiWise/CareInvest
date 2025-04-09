@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Birthstone+Bounce:wght@400;500&family=Kaisei+Tokumin&display=swap');
+
+
+@import url('global.css');
+
+@import url('sections/header.css');
+@import url('sections/main.css');
+@import url('sections/footer.css');
+
+@import url('responsive.css');
+
+:root{
+
+    --inter: "Inter", sans-serif;
+    --Kaisei: "Kaisei Tokumin", serif;
+    --primary-color: 0,0,0;
+    --secondary-color:255,255,255;
+
+    --third-color: 254,248,215;
+
+    --headline-font-size:42px;
+    --headline-font-weight: 700;
+
+    --subheadline-font-size: 22px;
+    --subheadmine-font-weight: 400;
+
+    --body-font-size: 12px;
+}
