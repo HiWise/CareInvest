@@ -49,6 +49,7 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    padding: 0px 20px;
 }
 
 .main__hero-title,
@@ -222,6 +223,7 @@
 .main__feature--button {
     padding: 10px 20px;
     font-size: var(--body-font-size);
+    color: rgb(var(--primary-color));
     border-radius: 20px;
     cursor: pointer;
     transition: all 300ms ease;

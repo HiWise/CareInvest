@@ -105,10 +105,10 @@
         background-color: rgb(var(--secondary-color), 0.2);
       }
 
-
-    .main__detail{
-        padding: 0px 50px;
+    .main__detail-button-left{
+        justify-content: flex-end;
     }
+
 
 }
 
@@ -117,12 +117,7 @@
 @media(max-width: 600px){
     /* MAIN */
     .main__hero-title{
-        display: none;
-    }
-
-    .main__hero-title-mobile{
-        display: block;
-        font-size: 25px;
+        font-size: 18px;
     }
 
     .main__hero-description{
@@ -131,7 +126,11 @@
 
     .main__hero-description-mobile{
         display: block;
-        font-size: 20px;
+        font-size: 16px;
+    }
+
+    .main__hero_subtitle{
+        font-size: 16px;
     }
 
     .main__features{
@@ -139,7 +138,23 @@
     }
 
     .main__detail{
-        padding: 0px 20px;
+        padding: 0px 50px;
+    }
+
+    .main__detail-title-text{
+        font-size: 30px;
+    }
+
+    .main__detail-description-text{
+        font-size: 14px;
+    }
+
+    .main__detail-subtext-text{
+        font-size: 14px;
+    }
+
+    .main__detail-rec{
+        height: 200px;
     }
     /* FOOTER */
     .footer{

@@ -146,6 +146,7 @@
     border: none;
     font-size: 30px;
     cursor: pointer;
+    color: rgb(var(--primary-color));
 }
 
 .mobile-menu--open{
@@ -161,6 +162,7 @@
     border: none;
     background-color: rgb(var(--secondary-color));
     gap: 30px;
+    color: rgb(var(--primary-color));
 }
 
 .nav_auth-menu-button{
