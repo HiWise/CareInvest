@@ -22,6 +22,7 @@ const animateMainContent = () => {
         { selector: ".main__hero-description-mobile", transform : false},
         { selector: ".main__abstract", transform : false},
         { selector: ".main__hero_subtitles", transform : false},
+        { selector: ".main__hero_subtitle-bigscreen", transform : false},
         ...Array.from(document.querySelectorAll(".main__feature")).map((feature) => ({
             element: feature,
             transform: true

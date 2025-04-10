@@ -91,7 +91,8 @@
 
 .nav__auth-button--signin{
     background-color: transparent;
-    border: 1px solid rgb(var(--primary-color))
+    border: 1px solid rgb(var(--primary-color));
+    color : rgb(var(--primary-color));
 }
 
 .nav__auth-button--signup{

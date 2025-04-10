@@ -40,7 +40,8 @@
 .main__hero-description-mobile,
 .main__abstract,
 .main__hero_subtitles,
-.main__feature {
+.main__feature,
+.main__hero_subtitle-bigscreen{
     opacity: 0;
     transition: opacity 0.6s ease-in-out, transform 0.6s ease-out;
 }
