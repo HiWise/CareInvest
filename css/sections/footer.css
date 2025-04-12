@@ -82,3 +82,9 @@
     transform: translateY(-5px);
 }
 
+.footer__logo-title{
+    text-decoration: none;
+    color: rgb(var(--secondary-color));
+    font-weight: 700;
+}
+

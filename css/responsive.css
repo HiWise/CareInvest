@@ -255,11 +255,9 @@
     .main__features{
         max-width: 80%;
         font-size: 30px;
-        gap: 50px;
     }
 
     .main__feature{
-
         padding: 10px;
     }
 
@@ -289,6 +287,10 @@
 
     .main__feature{
         gap: 20px;
+    }
+
+    .main__feature--description{
+        gap: 5px;
     }
 
 

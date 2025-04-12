@@ -11,29 +11,26 @@
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="CareInvest" />
     <link rel="manifest" href="assets/favicon/site.webmanifest">
-
-    
-    
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body> 
+<body class="_main"> 
     <header class="header">
         <nav class="header__nav">
             <div class="nav__logo">
-                <img src="assets/logo_CareInvest.svg" alt="Logo_CareInvest" class="nav__logo-img">
+                <a href="index.html"><img src="assets/logo_CareInvest.svg" alt="Logo_CareInvest" class="nav__logo-img"></a>
             </div>
             <div class="nav__onglets">
-                <button class="nav__onglets-button">
+                <button class="nav__onglets-button" onclick="location.href='ma-situation.html'">
                     MA SITUATION
                 </button>
-                <button class="nav__onglets-button">
+                <button class="nav__onglets-button" onclick="location.href='mes-projets.html'">
                     MES PROJETS
                 </button>
-                <button class="nav__onglets-button">
+                <button class="nav__onglets-button" onclick="location.href='mes-rapports.html'">
                     MES RAPPORTS
                 </button>
-                <button class="nav__onglets-button">
+                <button class="nav__onglets-button" onclick="location.href='mes-simulateurs.html'">
                     MES SIMULATEURS
                 </button>
             </div>
@@ -61,16 +58,16 @@
             <button class="nav_auth-menu-button nav__auth-button--signup">
                 Essayer CareInvest
             </button>
-            <button class="nav_auth-button nav__onglets--onglet">
+            <button class="nav_auth-button nav__onglets--onglet" onclick="location.href='ma-situation.html'">
                 MA SITUATION
             </button>
-            <button class="nav_auth-button nav__onglets--onglet">
+            <button class="nav_auth-button nav__onglets--onglet" onclick="location.href='mes-projets.html'">
                 MES PROJETS
             </button>
-            <button class="nav_auth-button nav__onglets--onglet">
+            <button class="nav_auth-button nav__onglets--onglet" onclick="location.href='mes-rapports.html'">
                 MES RAPPORTS
             </button>
-            <button class="nav_auth-button nav__onglets--onglet">
+            <button class="nav_auth-button nav__onglets--onglet" onclick="location.href='mes-simulateurs.html'">
                 MES SIMULATEURS
             </button>
         </nav>
@@ -140,7 +137,7 @@
                             </div>
                         </div>
                         <div class="main__feature--buttons">
-                            <button class="main__feature--button">
+                            <button class="main__feature--button" onclick="location.href='ma-situation.html'">
                                 Créer une situation
                             </button>
                         </div>
@@ -177,7 +174,7 @@
                             </div>
                         </div>
                         <div class="main__feature--buttons">
-                            <button class="main__feature--button">
+                            <button class="main__feature--button" onclick="location.href='mes-projets.html'">
                                 Créer un projet
                             </button>
                         </div>
@@ -214,7 +211,7 @@
                             </div>
                         </div>
                         <div class="main__feature--buttons">
-                            <button class="main__feature--button">
+                            <button class="main__feature--button" onclick="location.href='mes-simulateurs.html'">
                                 Comparer les régimes fiscaux
                             </button>
                         </div>
@@ -243,7 +240,7 @@
                             </p>
                         </div>
                         <div class="main__detail-create">
-                            <button class="main__detail-button autShow">
+                            <button class="main__detail-button autShow" onclick="location.href='ma-situation.html'">
                                 Créer une situation
                             </button>
                         </div>
@@ -290,7 +287,7 @@
                             </p>
                         </div>
                         <div class="main__detail-create main__detail-button-left">
-                            <button class="main__detail-button">
+                            <button class="main__detail-button" onclick="location.href='mes-projets.html'">
                                 Créer un projet
                             </button>
                         </div>
@@ -313,7 +310,7 @@
                             </p>
                         </div>
                         <div class="main__detail-create">
-                            <button class="main__detail-button">
+                            <button class="main__detail-button" onclick="location.href='mes-rapports.html'">
                                 Comparer les régimes fiscaux
                             </button>
                         </div>
@@ -346,8 +343,10 @@
             <div class="footer__info">
                 <div class="footer__logo">
                     <img src="assets/favicon/favicon.ico" alt="Logo_CareInvest" class="footer__logo-img">
-                    <h3 class="footer__logo-title">CareInvest</h3>
+                    <a href="index.html" class="footer__logo-title">CareInvest
+                    </a>
                 </div>
+
                 <div class="footer__socials">
                     <a href="https://www.linkedin.com" class="footer_social-link"><img src="assets/Socials/Linkedin_logo.svg" alt="LinkedIn" class="footer__social-icon"></a>
                     <a href="https://x.com" class="footer_social-link"><img src="assets/Socials/X_logo.svg" alt="Twitter/X" class="footer__social-icon"></a>

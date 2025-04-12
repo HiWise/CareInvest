@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareInvest</title>
+    
+    <link rel="icon" type="image/png" href="assets/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="CareInvest" />
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="header__nav">
+            <div class="nav__logo">
+                <a href="index.html"><img src="assets/logo_CareInvest.svg" alt="Logo_CareInvest" class="nav__logo-img"></a>
+            </div>
+            <div class="nav__onglets">
+                <button class="nav__onglets-button" onclick="location.href='ma-situation.html'">
+                    MA SITUATION
+                </button>
+                <button class="nav__onglets-button" onclick="location.href='mes-projets.html'">
+                    MES PROJETS
+                </button>
+                <button class="nav__onglets-button" onclick="location.href='mes-rapports.html'">
+                    MES RAPPORTS
+                </button>
+                <button class="nav__onglets-button" onclick="location.href='mes-simulateurs.html'">
+                    MES SIMULATEURS
+                </button>
+            </div>
+            <div class="nav__auth">
+                <button class="nav_auth-button nav__auth-button--signin">
+                    Connexion
+                </button>
+                <button class="nav_auth-button nav__auth-button--signup">
+                    Essayer CareInvest
+                </button>
+            </div>
+            <div class="nav__mobile-menu" id="navMobileMenu">
+                <img src="assets/menu.svg" alt="Menu">
+            </div>
+        </nav>
+    </header>
+
+
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu__close" id="mobileMenuClose">&times;</button>
+        <nav class="mobile-menu__nav">
+            <button class="nav_auth-menu-button nav__auth-button--signin">
+                Connexion
+            </button>
+            <button class="nav_auth-menu-button nav__auth-button--signup">
+                Essayer CareInvest
+            </button>
+            <button class="nav_auth-button nav__onglets--onglet" onclick="location.href='ma-situation.html'">
+                MA SITUATION
+            </button>
+            <button class="nav_auth-button nav__onglets--onglet" onclick="location.href='mes-projets.html'">
+                MES PROJETS
+            </button>
+            <button class="nav_auth-button nav__onglets--onglet" onclick="location.href='mes-rapports.html'">
+                MES RAPPORTS
+            </button>
+            <button class="nav_auth-button nav__onglets--onglet" onclick="location.href='mes-simulateurs.html'">
+                MES SIMULATEURS
+            </button>
+        </nav>
+    </div>
+
+    <main>
+        MES RAPPORTS
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container">
+             <div class="footer__legal">
+                 <p class="footer__legal-item">&copy; 2025 CareInvest Corp</p>
+                 <p class="footer__legal-item">Mentions Légales</p>
+                 <p class="footer__legal-item">Politique de confidentialité</p>
+             </div>
+            
+             <div class="footer__info">
+                 <div class="footer__logo">
+                     <img src="assets/favicon/favicon.ico" alt="Logo_CareInvest" class="footer__logo-img">
+                     <a href="index.html" class="footer__logo-title">CareInvest
+                     </a>
+                 </div>
+ 
+                 <div class="footer__socials">
+                     <a href="https://www.linkedin.com" class="footer_social-link"><img src="assets/Socials/Linkedin_logo.svg" alt="LinkedIn" class="footer__social-icon"></a>
+                     <a href="https://x.com" class="footer_social-link"><img src="assets/Socials/X_logo.svg" alt="Twitter/X" class="footer__social-icon"></a>
+                     <a href="https://www.instagram.com" class="footer_social-link"><img src="assets/Socials/Instagram_logo.svg" alt="Instagram" class="footer__social-icon"></a>
+                     <a href="https://www.youtube.com" class="footer_social-link"><img src="assets/Socials/Youtube_Logo.svg" alt="Youtube" class="footer__social-icon footer__social-icon-YT"></a>
+                 </div>
+             </div>
+        </div> 
+     </footer>
+      <script src="js/main.js"></script>
+</body>
