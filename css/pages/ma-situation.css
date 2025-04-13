@@ -1,3 +1,17 @@
+.collapsible-box {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.collapsible-box.visible {
+  max-height: 400px; /* ajuste selon la hauteur de ton champ */
+  opacity: 1;
+}
+
+  
+
 /***********           MAIN          **************/ 
 
 .ma-situation .main{
@@ -181,7 +195,8 @@
     margin-bottom: 0.5rem;
 }
 
-.situation__form__box input[type="text"] {
+.situation__form__box input[type="text"],
+.situation__form__box input[type="date"]{
     width: 90%;
     padding: 10px 30px;
     border: 1px solid #ccc;
@@ -191,11 +206,13 @@
     transition: border-color 0.3s ease;
 }
 
-.situation__form__box input[type="text"]::placeholder {
+.situation__form__box input[type="text"]::placeholder,
+.situation__form__box input[type="date"]::placeholder{
     color: #aaa;
 }
 
-.situation__form__box input[type="text"]:focus {
+.situation__form__box input[type="text"]:focus,
+.situation__form__box input[type="date"]:focus{
     border-color: rgb(var(--primary-color));
     outline: none;
 }

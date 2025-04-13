@@ -121,14 +121,14 @@
                                     </div>
                                     <div class="situation__form__box">
                                         <label class="situation__form__box-label"> Date de naissance </label>
-                                        <input type="text" placeholder="jj/mm/aaaa">
+                                        <input type="date" placeholder="jj/mm/aaaa">
                                     </div>
                                 </div>
                                 <div class="situation__form_content_pairs">
                                     <div class="situation__form__box">
                                         <label class="situation__form__box-label"> Situation matrimonial (<span class="etoile">*</span>)</label>
                                         <div class="select-box">
-                                            <select required>
+                                            <select id="matrimonial-select" required>
                                                 <option value="" disabled selected hidden>Marié(e)/Célibaire/Divorcé(e)/Veuf(ve)</option>
                                                 <option value="marie">Marié(e)</option>
                                                 <option value="celibataire">Célibataire</option>
@@ -141,7 +141,7 @@
                                         <label class="situation__form__box-label"> Situation particulière (<span class="etoile">*</span>)</label>
                                         <div class="select-box">
                                             <select required>
-                                                <!-- <option value="" disabled selected hidden>Ma situation particulière</option> -->
+                                                <option value="" disabled selected hidden>Sélectionnez votre situation</option>
                                                 <option value="pas-particulière">Pas de situation particulière</option>
                                                 <option value="isolé">Parent isolé(e)</option>
                                                 <option value="seul-5-ans">Élevé seul(e) un enfant pendant 5 ans </option>
@@ -213,7 +213,7 @@
                                             <input type="number" id="Revenu-net" name="revenu-net" placeholder="0 €" step="100" min="0">
                                         </div>
                                     </div>
-                                    <div class="situation__form__box">
+                                    <div id="conjoint-income-box" class="situation__form__box collapsible-box">
                                         <label class="situation__form__box-label"> Revenu net imposable conjoint(e) </label>
                                         <input type="number" placeholder="0 €">
                                     </div>
@@ -236,29 +236,39 @@
                             <div class="situation__form__content">
                                 <div class="situation__form_content_pairs">
                                     <div class="situation__form__box">
-                                        <label class="situation__form__box-label">Type de résidence (<span class="etoile">*</span>)</label>
-                                        <div class="select-box">
-                                            <select required>
-                                                <option value="" disabled selected hidden>Propriétaire/Locataire/Logé</option>
-                                                <option value="Proprietaire">Propriétaire</option>
-                                                <option value="Locataire">Locataire</option>
-                                                <option value="loge-gratuit"> Logé à titre gratuit </option>
-                                              </select>
-                                        </div>
+                                      <label class="situation__form__box-label">Type de résidence (<span class="etoile">*</span>)</label>
+                                      <div class="select-box">
+                                        <select id="residence-select" required>
+                                          <option value="" disabled selected hidden>Propriétaire/Locataire/Logé</option>
+                                          <option value="Proprietaire">Propriétaire</option>
+                                          <option value="Locataire">Locataire</option>
+                                          <option value="loge-gratuit">Logé à titre gratuit</option>
+                                        </select>
+                                      </div>
+                                    </div>
+                                    <div id="loyer-box" class="situation__form__box collapsible-box">
+                                      <label class="situation__form__box-label">Loyer</label>
+                                      <input type="text" placeholder="1 200 €">
+                                    </div>
+                                  </div>
+                                <div id="proprietaire-fields" class="situation__form_content_pairs collapsible-box">
+                                    <div class="situation__form__box">
+                                    <label class="situation__form__box-label">Type de financement (<span class="etoile">*</span>)</label>
+                                    <div class="select-box">
+                                        <select required>
+                                        <option value="" disabled selected hidden>Crédit/Financé</option>
+                                        <option value="credit">Crédit en cours</option>
+                                        <option value="finance">Entièrement financé</option>
+                                        </select>
+                                    </div>
                                     </div>
                                     <div class="situation__form__box">
-                                        <label class="situation__form__box-label"> Valeur du bien </label>
-                                        <input type="text" placeholder="300 000 €">
-                                    </div>
-                                </div>
-                                <div class="situation__form_content_pairs">
-                                    <div class="situation__form__box">
-                                        <label class="situation__form__box-label"> Type de financement (<span class="etoile">*</span>)</label>
-                                        <input type="text" placeholder="Crédit/Entièrement financé">
+                                    <label class="situation__form__box-label">Charge(s) annuelle(s)</label>
+                                    <input type="text" placeholder="60 000 €">
                                     </div>
                                     <div class="situation__form__box">
-                                        <label class="situation__form__box-label"> Charge(s) annuelle(s) </label>
-                                        <input type="text" placeholder="Pas de situation particulière">
+                                    <label class="situation__form__box-label">Valeur du bien</label>
+                                    <input type="text" placeholder="300 000 €">
                                     </div>
                                 </div>
                             </div>    

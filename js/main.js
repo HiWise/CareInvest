@@ -63,16 +63,56 @@ document.addEventListener('DOMContentLoaded', () => {
     const toggles = document.querySelectorAll('.situation__form__up');
   
     toggles.forEach(toggle => {
-      toggle.addEventListener('click', () => {
-        const section = toggle.closest('.situation__form__section');
-        const content = section.querySelector('.situation__form__content');
-        const arrow = toggle.querySelector('.arrow-down');
-  
-        content.classList.toggle('collapsed');
-        arrow.classList.toggle('rotated');
-      });
+    toggle.addEventListener('click', () => {
+    const section = toggle.closest('.situation__form__section');
+    const content = section.querySelector('.situation__form__content');
+    const arrow = toggle.querySelector('.arrow-down');
+
+    content.classList.toggle('collapsed');
+    arrow.classList.toggle('rotated');
     });
+});
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const matrimonialSelect = document.getElementById('matrimonial-select');
+  const conjointBox = document.getElementById('conjoint-income-box');
+
+  const residenceSelect = document.getElementById('residence-select');
+  const loyerBox = document.getElementById('loyer-box');
+  const proprietaireFields = document.getElementById('proprietaire-fields'); // les 3 champs à afficher si "Propriétaire"
+
+  // Affichage champ revenu conjoint(e)
+  matrimonialSelect.addEventListener('change', () => {
+    if (matrimonialSelect.value === 'marie') {
+      conjointBox.classList.add('visible');
+    } else {
+      conjointBox.classList.remove('visible');
+    }
   });
+
+  // Affichage champs résidence (loyer ou bloc propriétaire)
+  residenceSelect.addEventListener('change', () => {
+    const selectedValue = residenceSelect.value;
+
+    // Affiche le champ "Loyer" si locataire
+    if (selectedValue === 'Locataire') {
+      loyerBox.classList.add('visible');
+    } else {
+      loyerBox.classList.remove('visible');
+    }
+
+    // Affiche les champs si propriétaire
+    if (selectedValue === 'Proprietaire') {
+      proprietaireFields.classList.add('visible');
+    } else {
+      proprietaireFields.classList.remove('visible');
+    }
+  });
+});
+
+
+
   
   
 handleMobileMenu();
