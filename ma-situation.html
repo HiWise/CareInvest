@@ -97,7 +97,7 @@
                         <form action="#" class="form">
                             <div class="situation__form__intro__name">
                                 <label class="situation__form__intro__name-label">Nom de la situation (<span class="etoile">*</span>)</label>
-                                <input type="text" placeholder="Entrez le nom de votre situation">
+                                <input type="text" placeholder="Entrez le nom de votre situation" required>
                             </div>
                         </form>
                     </div>
@@ -127,21 +127,67 @@
                                 <div class="situation__form_content_pairs">
                                     <div class="situation__form__box">
                                         <label class="situation__form__box-label"> Situation matrimonial (<span class="etoile">*</span>)</label>
-                                        <input type="text" placeholder="Marié">
+                                        <div class="select-box">
+                                            <select required>
+                                                <option value="" disabled selected hidden>Marié(e)/Célibaire/Divorcé(e)/Veuf(ve)</option>
+                                                <option value="marie">Marié(e)</option>
+                                                <option value="celibataire">Célibataire</option>
+                                                <option value="divorce">Divorcé(e)/Séparé(e)</option>
+                                                <option value="veuf">Veuf(ve)</option>
+                                              </select>
+                                        </div>
                                     </div>
                                     <div class="situation__form__box">
                                         <label class="situation__form__box-label"> Situation particulière (<span class="etoile">*</span>)</label>
-                                        <input type="text" placeholder="Pas de situation particulière">
+                                        <div class="select-box">
+                                            <select required>
+                                                <!-- <option value="" disabled selected hidden>Ma situation particulière</option> -->
+                                                <option value="pas-particulière">Pas de situation particulière</option>
+                                                <option value="isolé">Parent isolé(e)</option>
+                                                <option value="seul-5-ans">Élevé seul(e) un enfant pendant 5 ans </option>
+                                                <option value="veuf/combattant">Veuf(ve) Invalide/Ancien combattant(e)</option>
+                                              </select>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="situation__form_content_pairs">
                                     <div class="situation__form__box">
                                         <label class="situation__form__box-label"> Enfant(s) à charge(s) (<span class="etoile">*</span>)</label>
-                                        <input type="text" placeholder="2">
+                                        <div class="select-box">
+                                            <select required>
+                                                <option value="" disabled selected hidden> Sélectionnez le nombre d'enfant(s)</option>
+                                                <option value="0">0</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="10">10</option>
+                                            </select>
+                                        </div>
                                     </div>
                                     <div class="situation__form__box">
-                                        <label class="situation__form__box-label"> Enfant(s) à charge alterné(s) (<span class="etoile">*</span>)</label>
-                                        <input type="text" placeholder="0">
+                                        <label class="situation__form__box-label"> Enfant(s) à charge alternée(s) (<span class="etoile">*</span>)</label>
+                                        <div class="select-box">
+                                            <select required>
+                                                <option value="" disabled selected hidden> Sélectionnez le nombre d'enfant(s)</option>
+                                                <option value="0">0</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="10">10</option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
                             </div>    
@@ -161,13 +207,15 @@
                         <form action="#" class="form">
                             <div class="situation__form__content">
                                 <div class="situation__form_content_pairs">
-                                    <div class="situation__form__box">
+                                    <div class="situation__form__box input-euro-container">
                                         <label class="situation__form__box-label">Revenu net imposable</label>
-                                        <input type="text" placeholder="40 000 €">
+                                        <div class="euro-input-wrapper">
+                                            <input type="number" id="Revenu-net" name="revenu-net" placeholder="0 €" step="100" min="0">
+                                        </div>
                                     </div>
                                     <div class="situation__form__box">
                                         <label class="situation__form__box-label"> Revenu net imposable conjoint(e) </label>
-                                        <input type="text" placeholder="0 €">
+                                        <input type="number" placeholder="0 €">
                                     </div>
                                 </div>
                             </div>    
@@ -188,8 +236,15 @@
                             <div class="situation__form__content">
                                 <div class="situation__form_content_pairs">
                                     <div class="situation__form__box">
-                                        <label class="situation__form__box-label">Type de résidence</label>
-                                        <input type="text" placeholder="Propriétaire">
+                                        <label class="situation__form__box-label">Type de résidence (<span class="etoile">*</span>)</label>
+                                        <div class="select-box">
+                                            <select required>
+                                                <option value="" disabled selected hidden>Propriétaire/Locataire/Logé</option>
+                                                <option value="Proprietaire">Propriétaire</option>
+                                                <option value="Locataire">Locataire</option>
+                                                <option value="loge-gratuit"> Logé à titre gratuit </option>
+                                              </select>
+                                        </div>
                                     </div>
                                     <div class="situation__form__box">
                                         <label class="situation__form__box-label"> Valeur du bien </label>
@@ -202,7 +257,7 @@
                                         <input type="text" placeholder="Crédit/Entièrement financé">
                                     </div>
                                     <div class="situation__form__box">
-                                        <label class="situation__form__box-label"> Charge(s) annuelle(s) (<span class="etoile">*</span>)</label>
+                                        <label class="situation__form__box-label"> Charge(s) annuelle(s) </label>
                                         <input type="text" placeholder="Pas de situation particulière">
                                     </div>
                                 </div>
@@ -239,4 +294,5 @@
        </div> 
     </footer>
      <script src="js/main.js"></script>
+      
 </body>

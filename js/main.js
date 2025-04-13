@@ -58,9 +58,23 @@ const observer = new IntersectionObserver((entries) => {
   });
   
 document.querySelectorAll('.autoShow').forEach(el => observer.observe(el));
+
+document.addEventListener('DOMContentLoaded', () => {
+    const toggles = document.querySelectorAll('.situation__form__up');
   
-
-
+    toggles.forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const section = toggle.closest('.situation__form__section');
+        const content = section.querySelector('.situation__form__content');
+        const arrow = toggle.querySelector('.arrow-down');
+  
+        content.classList.toggle('collapsed');
+        arrow.classList.toggle('rotated');
+      });
+    });
+  });
+  
+  
 handleMobileMenu();
 animateMainContent();
 

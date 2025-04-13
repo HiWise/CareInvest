@@ -124,6 +124,10 @@
         display: none;
     }
 
+    .ma-situation .main__hero-description{
+        display: block;
+    }
+
     .main__hero-description-mobile{
         display: block;
         font-size: 16px;
@@ -177,6 +181,13 @@
         gap: 10px;
         padding-bottom: 30px;
     }
+
+    .situation__form_content_pairs{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
 }
 
 
@@ -331,6 +342,8 @@
     .main__detail-rec{
         height: 525px;
     }
+
+  
     
     /***********           FOOTER          **************/  
 
