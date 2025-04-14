@@ -75,46 +75,54 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  const matrimonialSelect = document.getElementById('matrimonial-select');
-  const conjointBox = document.getElementById('conjoint-income-box');
-
-  const residenceSelect = document.getElementById('residence-select');
-  const loyerBox = document.getElementById('loyer-box');
-  const proprietaireFields = document.getElementById('proprietaire-fields'); // les 3 champs à afficher si "Propriétaire"
-
-  // Affichage champ revenu conjoint(e)
-  matrimonialSelect.addEventListener('change', () => {
-    if (matrimonialSelect.value === 'marie') {
-      conjointBox.classList.add('visible');
-    } else {
-      conjointBox.classList.remove('visible');
-    }
-  });
-
-  // Affichage champs résidence (loyer ou bloc propriétaire)
-  residenceSelect.addEventListener('change', () => {
-    const selectedValue = residenceSelect.value;
-
-    // Affiche le champ "Loyer" si locataire
-    if (selectedValue === 'Locataire') {
-      loyerBox.classList.add('visible');
-    } else {
-      loyerBox.classList.remove('visible');
-    }
-
-    // Affiche les champs si propriétaire
-    if (selectedValue === 'Proprietaire') {
-      proprietaireFields.classList.add('visible');
-    } else {
-      proprietaireFields.classList.remove('visible');
-    }
-  });
+    const matrimonialSelect = document.getElementById('matrimonial-select');
+    const conjointBox = document.getElementById('conjoint-income-box');
+  
+    const residenceSelect = document.getElementById('residence-select');
+    const loyerBox = document.getElementById('loyer-box');
+    const proprietaireFields = document.getElementById('proprietaire-fields'); // les 3 champs à afficher si "Propriétaire"
+  
+    const financementSelect = document.getElementById('type-financement');
+    const detailFinancementSection = document.getElementById('detail-financment-fields');
+  
+    // Affichage champ revenu conjoint(e)
+    matrimonialSelect.addEventListener('change', () => {
+      if (matrimonialSelect.value === 'marie') {
+        conjointBox.classList.add('visible');
+      } else {
+        conjointBox.classList.remove('visible');
+      }
+    });
+  
+    // Affichage champs résidence (loyer ou bloc propriétaire)
+    residenceSelect.addEventListener('change', () => {
+      const selectedValue = residenceSelect.value;
+  
+      // Affiche le champ "Loyer" si locataire
+      if (selectedValue === 'Locataire') {
+        loyerBox.classList.add('visible');
+      } else {
+        loyerBox.classList.remove('visible');
+      }
+  
+      // Affiche les champs si propriétaire
+      if (selectedValue === 'Proprietaire') {
+        proprietaireFields.classList.add('visible');
+      } else {
+        proprietaireFields.classList.remove('visible');
+      }
+    });
+  
+    // Affichage section "Détail financement crédit" si "Crédit en cours"
+    financementSelect.addEventListener('change', () => {
+      if (financementSelect.value === 'credit') {
+        detailFinancementSection.classList.add('visible');
+      } else {
+        detailFinancementSection.classList.remove('visible');
+      }
+    });
 });
 
-
-
-  
-  
 handleMobileMenu();
 animateMainContent();
 

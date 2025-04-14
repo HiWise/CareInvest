@@ -6,7 +6,7 @@
 }
 
 .collapsible-box.visible {
-  max-height: 400px; /* ajuste selon la hauteur de ton champ */
+  max-height: 4000px; /* ajuste selon la hauteur de ton champ */
   opacity: 1;
 }
 
@@ -134,6 +134,11 @@
 }
 .situation__form__section.active .arrow-down {
     transform: rotate(180deg);
+}
+
+.situation__form__title-detail-text{
+    font-family: inter, sans-serif;
+    font-size: 15px;
 }
 
   /***********           FORM-SECTIONS-CONTENT          **************/ 
