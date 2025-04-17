@@ -293,33 +293,33 @@
                                         <div class="situation__form__box">
                                             <label class="situation__form__box-label">Durée d'emprunt </label>
                                             <div class="select-box">
-                                                <select required>
+                                                <select id="durée-emprunt" required>
                                                     <option value="" disabled selected hidden>15 ans</option>
-                                                    <option value="1 an">1 an</option>
-                                                    <option value="2 ans">2 ans</option>
-                                                    <option value="3 ans">3 ans</option>
-                                                    <option value="4 ans">4 ans</option>
-                                                    <option value="5 ans">5 ans</option>
-                                                    <option value="6 ans">6 ans</option>
-                                                    <option value="7 ans">7 ans</option>
-                                                    <option value="8 ans">8 ans</option>
-                                                    <option value="9 ans">9 ans</option>
-                                                    <option value="10 ans">10 ans</option>
-                                                    <option value="11 ans">11 ans</option>
-                                                    <option value="12 ans">12 ans</option>
-                                                    <option value="13 ans">13 ans</option>
-                                                    <option value="14 ans">14 ans</option>
-                                                    <option value="15 ans">15 ans</option>
-                                                    <option value="16 ans">16 ans</option>
-                                                    <option value="17 ans">17 ans</option>
-                                                    <option value="18 ans">18 ans</option>
-                                                    <option value="19 ans">19 ans</option>
-                                                    <option value="20 ans">20 ans</option>
-                                                    <option value="21 ans">21 ans</option>
-                                                    <option value="22 ans">22 ans</option>
-                                                    <option value="23 ans">23 ans</option>
-                                                    <option value="24 ans">24 ans</option>
-                                                    <option value="25 ans">25 ans</option>
+                                                    <option value="1">1 an</option>
+                                                    <option value="2">2 ans</option>
+                                                    <option value="3">3 ans</option>
+                                                    <option value="4">4 ans</option>
+                                                    <option value="5">5 ans</option>
+                                                    <option value="6">6 ans</option>
+                                                    <option value="7">7 ans</option>
+                                                    <option value="8">8 ans</option>
+                                                    <option value="9">9 ans</option>
+                                                    <option value="10">10 ans</option>
+                                                    <option value="11">11 ans</option>
+                                                    <option value="12">12 ans</option>
+                                                    <option value="13">13 ans</option>
+                                                    <option value="14">14 ans</option>
+                                                    <option value="15">15 ans</option>
+                                                    <option value="16">16 ans</option>
+                                                    <option value="17">17 ans</option>
+                                                    <option value="18">18 ans</option>
+                                                    <option value="19">19 ans</option>
+                                                    <option value="20">20 ans</option>
+                                                    <option value="21">21 ans</option>
+                                                    <option value="22">22 ans</option>
+                                                    <option value="23">23 ans</option>
+                                                    <option value="24">24 ans</option>
+                                                    <option value="25">25 ans</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -333,10 +333,11 @@
                                             <label class="situation__form__box-label"> Taux assurances </label>
                                             <input type="number" inputmode="numeric" placeholder="0.96%" name="taux-assurances" id="taux-assurances">
                                         </div>
-                                        <div id="mensualite-box" class="situation__form__box">
-                                            <label class="situation__form__box-label">Montant emprunté</label>
-                                            <input type="number" inputmode="numeric" placeholder="1230 €" id="mensualite" name="mensualite">
-                                        </div>
+                                        <div class="situation__form__box">
+                                            <label class="situation__form__box-label">Mensualité estimée</label>
+                                            <input type="text" id="mensualité" readonly placeholder="-- €" class="situation__form__box-input mensualité-readonly">
+                                          </div>
+                                          
                                     </div>
                                 </div>    
                             </div>
@@ -371,6 +372,7 @@
        </div> 
     </footer>
      <script src="js/main.js"></script>  
+     <script src="js/Calcul_mensualité.js"></script>
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
      <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
      <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/fr.js"></script>
