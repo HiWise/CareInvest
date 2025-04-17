@@ -9,6 +9,12 @@ function calculatemensualité() {
     const t = (parseFloat(document.getElementById('taux-emprunt').value) || 0) / 100 / 12;
     const a = (parseFloat(document.getElementById('taux-assurances').value) || 0) / 100;
 
+    if (!n || !M || !t) {
+      // On n'affiche rien si une donnée essentielle manque
+      document.getElementById('mensualité').innerText = '';
+      return;
+  }
+
     const assurance = a * M / 12;
     const mensualité = Math.round((M * t / (1 - Math.pow(1 + t, -n)) + assurance) * 100) / 100;
 
