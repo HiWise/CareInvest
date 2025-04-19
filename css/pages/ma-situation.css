@@ -6,7 +6,7 @@
 }
 
 .collapsible-box.visible {
-  max-height: 4000px; /* ajuste selon la hauteur de ton champ */
+  max-height: max-content; /* ajuste selon la hauteur de ton champ */
   opacity: 1;
 }
 

@@ -118,6 +118,40 @@ document.addEventListener("DOMContentLoaded", function () {
     if (tauxEmprunt) formatTauxChamp(tauxEmprunt);
     if (tauxAssurances) formatTauxChamp(tauxAssurances);
 });
+
+function formatEuroInput(input) {
+    input.addEventListener('input', () => {
+        const val = input.value.replace(/\D/g, '');
+
+        if (val === '') {
+            input.value = '';
+            return;
+        }
+
+        const formatted = parseInt(val, 10).toLocaleString('fr-FR') + ' €';
+        input.value = formatted;
+
+        // Place le curseur avant l'espace et €
+        input.setSelectionRange(input.value.length - 2, input.value.length - 2);
+    });
+
+    input.addEventListener('focus', () => {
+        const raw = input.value.replace(/\D/g, '');
+        input.value = raw;
+    });
+
+    input.addEventListener('blur', () => {
+        const raw = input.value.replace(/\D/g, '');
+        if (raw !== '') {
+            input.value = parseInt(raw, 10).toLocaleString('fr-FR') + ' €';
+        }
+    });
+}
+
+// Appliquer à tous les champs avec la classe euro-input
+document.querySelectorAll('.euro-input').forEach((input) => {
+    formatEuroInput(input);
+});
+
+
   
-
-

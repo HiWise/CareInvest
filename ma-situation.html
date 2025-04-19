@@ -204,13 +204,11 @@
                                 <div class="situation__form_content_pairs">
                                     <div class="situation__form__box input-euro-container">
                                         <label class="situation__form__box-label">Revenu net imposable</label>
-                                        <div class="euro-input-wrapper">
-                                            <input type="number" inputmode="numeric" id="Revenu-net" name="revenu-net" placeholder="0 €" step="100" min="0">
-                                        </div>
+                                        <input class="euro-input" type="text" inputmode="numeric" id="Revenu-net" name="revenu-net" placeholder="0 €" min="0">
                                     </div>
                                     <div id="conjoint-income-box" class="situation__form__box collapsible-box">
                                         <label class="situation__form__box-label"> Revenu net imposable conjoint(e) </label>
-                                        <input type="number" inputmode="numeric" placeholder="0 €" name="Revenu-net-conjoint(e)">
+                                        <input class="euro-input" type="text" inputmode="numeric" placeholder="0 €" name="Revenu-net-conjoint(e)">
                                     </div>
                                 </div>
                             </div>    
@@ -242,7 +240,7 @@
                                     </div>
                                     <div id="loyer-box" class="situation__form__box collapsible-box">
                                         <label class="situation__form__box-label">Loyer</label>
-                                        <input type="number" inputmode="numeric" placeholder="1 200 €">
+                                        <input class="euro-input" type="text" inputmode="numeric" placeholder="1 200 €">
                                     </div>
                                 </div>
                                 <div id="proprietaire-fields" class="situation__form_content_pairs collapsible-box">
@@ -258,11 +256,11 @@
                                     </div>
                                     <div class="situation__form__box">
                                         <label class="situation__form__box-label">Charge(s) annuelle(s)</label>
-                                        <input type="number" inputmode="numeric" placeholder="60 000 €" id="charges-annuelles" name="charges-annuelles">
+                                        <input class="euro-input" type="text" inputmode="numeric" placeholder="60 000 €" id="charges-annuelles" name="charges-annuelles">
                                     </div>
                                     <div class="situation__form__box">
                                         <label class="situation__form__box-label">Valeur du bien</label>
-                                        <input id="valeur-bien" name="valeur-bien" type="number" inputmode="numeric" placeholder="300 000 €">
+                                        <input id="valeur-bien" name="valeur-bien" class="euro-input" type="text" inputmode="numeric" placeholder="300 000 €">
                                     </div>
                                 </div>
                             </div>    
@@ -286,7 +284,7 @@
                                         </div>
                                         <div class="situation__form__box">
                                             <label class="situation__form__box-label">Montant emprunté</label>
-                                            <input type="number" inputmode="numeric" placeholder="300 000 €" id="montant-emprunt" name="montant-emprunt">
+                                            <input class="euro-input" type="text" inputmode="numeric" placeholder="300 000 €" id="montant-emprunt" name="montant-emprunt">
                                         </div>
                                     </div>
                                     <div class="situation__form_content_pairs">
