@@ -90,35 +90,57 @@ flatpickr("#date-naissance", {
   
 
 
-// Formatage de l'affichage du clavier numérique //
-function formatTauxChamp(input) {
+// Formatage de l'affichage des Taux //
+function formatTauxInput(input) {
     input.addEventListener('input', () => {
-      let val = input.value.replace(/[^\d,]/g, '');
-  
-      // remplace plusieurs virgules par une seule
-      const parts = val.split(',');
-      if (parts.length > 2) {
-        val = parts[0] + ',' + parts[1];
-      }
-  
-      // max 2 décimales
-      if (val.includes(',')) {
-        const [int, dec] = val.split(',');
-        val = int + ',' + dec.slice(0, 2);
-      }
-  
-      input.value = val;
+        let val = input.value
+            .replace(/[^\d.,]/g, '') // autorise chiffres, virgule et point
+            .replace('.', ',');      // remplace le point par une virgule
+
+        // Empêche plusieurs virgules
+        const parts = val.split(',');
+        if (parts.length > 2) {
+            val = parts[0] + ',' + parts[1];
+        }
+
+        // Max deux décimales
+        if (val.includes(',')) {
+            const [int, dec] = val.split(',');
+            val = int + ',' + dec.slice(0, 2);
+        }
+
+        input.value = val + ' %';
+
+        // Replace le curseur juste avant le %
+        const pos = input.value.length - 2;
+        input.setSelectionRange(pos, pos);
+    });
+
+    input.addEventListener('focus', () => {
+        // Enlève tout sauf chiffres et virgule
+        input.value = input.value
+            .replace(/[^\d.,]/g, '')
+            .replace('.', ','); // standardise la virgule
+    });
+
+    input.addEventListener('blur', () => {
+        let val = input.value
+            .replace(/[^\d,]/g, '');
+
+        if (val) {
+            input.value = val + ' %';
+        }
     });
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-    const tauxEmprunt = document.getElementById('taux-emprunt');
-    const tauxAssurances = document.getElementById('taux-assurances');
-  
-    if (tauxEmprunt) formatTauxChamp(tauxEmprunt);
-    if (tauxAssurances) formatTauxChamp(tauxAssurances);
+// Appliquer à tous les champs de taux
+document.querySelectorAll('.taux-input').forEach((input) => {
+    formatTauxInput(input);
 });
 
+
+
+// Formatafe de l'affichage des Euros
 function formatEuroInput(input) {
     input.addEventListener('input', () => {
         const val = input.value.replace(/\D/g, '');
