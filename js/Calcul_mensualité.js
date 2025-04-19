@@ -5,16 +5,19 @@ document.getElementById('taux-emprunt').addEventListener('input', calculatemensu
 
 function calculatemensualité() {
   const n = parseInt(document.getElementById('durée-emprunt').value) * 12;
-  
-  // Nettoyer la valeur du montant emprunté en enlevant les espaces
+
+  // Nettoyer le montant (enlever les espaces)
   const montantEmprunt = document.getElementById('montant-emprunt').value.replace(/\s+/g, '');
   const M = parseFloat(montantEmprunt) || 0;
 
-  const t = (parseFloat(document.getElementById('taux-emprunt').value) || 0) / 100 / 12;
-  const a = (parseFloat(document.getElementById('taux-assurances').value) || 0) / 100;
+  // Remplacer les virgules par des points dans les taux
+  const tauxEmprunt = document.getElementById('taux-emprunt').value.replace(',', '.');
+  const tauxAssurance = document.getElementById('taux-assurances').value.replace(',', '.');
+
+  const t = (parseFloat(tauxEmprunt) || 0) / 100 / 12;
+  const a = (parseFloat(tauxAssurance) || 0) / 100;
 
   if (!n || !M || !t) {
-      // On n'affiche rien si une donnée essentielle manque
       document.getElementById('mensualité').innerText = '';
       return;
   }
@@ -24,4 +27,3 @@ function calculatemensualité() {
 
   document.getElementById('mensualité').value = `${mensualité.toFixed(2)} €`;
 }
-
