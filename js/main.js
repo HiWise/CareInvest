@@ -74,6 +74,12 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 });
 
+
+handleMobileMenu();
+animateMainContent();
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
     const matrimonialSelect = document.getElementById('matrimonial-select');
     const conjointBox = document.getElementById('conjoint-income-box');
@@ -123,6 +129,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+
+
 // Attendre que la page soit bien chargée
 document.addEventListener("DOMContentLoaded", function () {
     // Initialisation pour la date de naissance
@@ -139,6 +147,7 @@ document.addEventListener("DOMContentLoaded", function () {
       maxDate: "today", // ou tu peux mettre une autre règle selon le besoin
     });
 });
+
 
 // Formatage de l'affichage du clavier numérique //
 function formatTauxChamp(input) {
@@ -160,13 +169,18 @@ function formatTauxChamp(input) {
       input.value = val;
     });
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    const tauxEmprunt = document.getElementById('taux-emprunt');
+    const tauxAssurances = document.getElementById('taux-assurances');
   
-  formatTauxChamp(document.getElementById('taux-emprunt'));
-  formatTauxChamp(document.getElementById('taux-assurances'));
+    if (tauxEmprunt) formatTauxChamp(tauxEmprunt);
+    if (tauxAssurances) formatTauxChamp(tauxAssurances);
+});
   
 
 
-handleMobileMenu();
-animateMainContent();
+
+
 
 
