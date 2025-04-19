@@ -123,6 +123,49 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// Attendre que la page soit bien chargée
+document.addEventListener("DOMContentLoaded", function () {
+    // Initialisation pour la date de naissance
+    flatpickr("#date-naissance", {
+      dateFormat: "d/m/Y", // Format jour/mois/année
+      locale: "fr",        // Langue française
+      maxDate: "today",    // On ne peut pas choisir une date future
+    });
+  
+    // Initialisation pour la date d'emprunt
+    flatpickr("#date-emprunt", {
+      dateFormat: "d/m/Y",
+      locale: "fr",
+      maxDate: "today", // ou tu peux mettre une autre règle selon le besoin
+    });
+});
+
+// Formatage de l'affichage du clavier numérique //
+function formatTauxChamp(input) {
+    input.addEventListener('input', () => {
+      let val = input.value.replace(/[^\d,]/g, '');
+  
+      // remplace plusieurs virgules par une seule
+      const parts = val.split(',');
+      if (parts.length > 2) {
+        val = parts[0] + ',' + parts[1];
+      }
+  
+      // max 2 décimales
+      if (val.includes(',')) {
+        const [int, dec] = val.split(',');
+        val = int + ',' + dec.slice(0, 2);
+      }
+  
+      input.value = val;
+    });
+}
+  
+  formatTauxChamp(document.getElementById('taux-emprunt'));
+  formatTauxChamp(document.getElementById('taux-assurances'));
+  
+
+
 handleMobileMenu();
 animateMainContent();
 

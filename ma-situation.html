@@ -117,7 +117,7 @@
                                     </div>
                                     <div class="situation__form__box">
                                         <label class="situation__form__box-label"> Date de naissance </label>
-                                        <input type="date" id="date-naissance" name="date-naissance">
+                                        <input type="text" id="date-naissance" name="date-naissance" placeholder="jj/mm/aaaa">
                                     </div>
                                 </div>
                                 <div class="situation__form_content_pairs">
@@ -282,7 +282,7 @@
                                     <div class="situation__form_content_pairs">
                                         <div class="situation__form__box">
                                             <label class="situation__form__box-label"> Date d'emprunt </label>
-                                            <input type="date" name="date-emprunt" id="date-emprunt">
+                                            <input type="text" name="date-emprunt" id="date-emprunt" placeholder="jj/mm/aaaa">
                                         </div>
                                         <div class="situation__form__box">
                                             <label class="situation__form__box-label">Montant emprunté</label>
@@ -294,50 +294,49 @@
                                             <label class="situation__form__box-label">Durée d'emprunt </label>
                                             <div class="select-box">
                                                 <select id="durée-emprunt" required>
-                                                    <option value="" disabled selected hidden>15 ans</option>
-                                                    <option value="1">1 an</option>
-                                                    <option value="2">2 ans</option>
-                                                    <option value="3">3 ans</option>
-                                                    <option value="4">4 ans</option>
-                                                    <option value="5">5 ans</option>
-                                                    <option value="6">6 ans</option>
-                                                    <option value="7">7 ans</option>
-                                                    <option value="8">8 ans</option>
-                                                    <option value="9">9 ans</option>
-                                                    <option value="10">10 ans</option>
-                                                    <option value="11">11 ans</option>
-                                                    <option value="12">12 ans</option>
-                                                    <option value="13">13 ans</option>
-                                                    <option value="14">14 ans</option>
-                                                    <option value="15">15 ans</option>
-                                                    <option value="16">16 ans</option>
-                                                    <option value="17">17 ans</option>
-                                                    <option value="18">18 ans</option>
-                                                    <option value="19">19 ans</option>
-                                                    <option value="20">20 ans</option>
-                                                    <option value="21">21 ans</option>
-                                                    <option value="22">22 ans</option>
-                                                    <option value="23">23 ans</option>
-                                                    <option value="24">24 ans</option>
+                                                    <option value="" disabled selected hidden>25 ans</option>
                                                     <option value="25">25 ans</option>
-                                                </select>
+                                                    <option value="24">24 ans</option>
+                                                    <option value="23">23 ans</option>
+                                                    <option value="22">22 ans</option>
+                                                    <option value="21">21 ans</option>
+                                                    <option value="20">20 ans</option>
+                                                    <option value="19">19 ans</option>
+                                                    <option value="18">18 ans</option>
+                                                    <option value="17">17 ans</option>
+                                                    <option value="16">16 ans</option>
+                                                    <option value="15">15 ans</option>
+                                                    <option value="14">14 ans</option>
+                                                    <option value="13">13 ans</option>
+                                                    <option value="12">12 ans</option>
+                                                    <option value="11">11 ans</option>
+                                                    <option value="10">10 ans</option>
+                                                    <option value="9">9 ans</option>
+                                                    <option value="8">8 ans</option>
+                                                    <option value="7">7 ans</option>
+                                                    <option value="6">6 ans</option>
+                                                    <option value="5">5 ans</option>
+                                                    <option value="4">4 ans</option>
+                                                    <option value="3">3 ans</option>
+                                                    <option value="2">2 ans</option>
+                                                    <option value="1">1 an</option>
+                                                  </select>                                                  
                                             </div>
                                         </div>
                                         <div class="situation__form__box">
                                             <label class="situation__form__box-label">Taux d'emprunt</label>
-                                            <input type="number" inputmode="numeric" placeholder="2.43 %" id="taux-emprunt" name="taux-emprunt">
+                                            <input type="text" inputmode="decimal" placeholder="2.43 %" id="taux-emprunt" name="taux-emprunt" pattern="[0-9]*[.,]?[0-9]*">
                                         </div>
                                     </div>
                                     <div class="situation__form_content_pairs">
                                         <div class="situation__form__box">
                                             <label class="situation__form__box-label"> Taux assurances </label>
-                                            <input type="number" inputmode="numeric" placeholder="0.96%" name="taux-assurances" id="taux-assurances">
+                                            <input type="text" inputmode="decimal" placeholder="0.96%" name="taux-assurances" id="taux-assurances" pattern="[0-9]*[.,]?[0-9]*">
                                         </div>
                                         <div class="situation__form__box">
                                             <label class="situation__form__box-label">Mensualité estimée</label>
                                             <input type="text" id="mensualité" readonly placeholder="0 €">
-                                          </div>
-                                          
+                                        </div>
                                     </div>
                                 </div>    
                             </div>
