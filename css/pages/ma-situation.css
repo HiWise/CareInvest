@@ -1,7 +1,3 @@
-input[type='date'] {
-    -webkit-appearance: none;
-}
-
 .collapsible-box {
   max-height: 0;
   overflow: hidden;
@@ -204,8 +200,7 @@ input[type='date'] {
     margin-bottom: 0.5rem;
 }
 
-.situation__form__box input[type="text"],
-.situation__form__box input[type="date"]{
+.situation__form__box input[type="text"]{
     width: 90%;
     padding: 10px 30px;
     border: 1px solid #ccc;
@@ -221,8 +216,7 @@ input[type='date'] {
     font-style: italic;
 }
 
-.situation__form__box input[type="text"]:focus,
-.situation__form__box input[type="date"]:focus{
+.situation__form__box input[type="text"]:focus{
     border-color: rgb(var(--primary-color));
     outline: none;
 }
@@ -254,6 +248,26 @@ input[type='date'] {
     cursor: pointer;
     transition: border-color 0.3s ease;
 }
+
+input::-webkit-calendar-picker-indicator {
+    display: none !important;
+}
+
+#date-naissance {
+    width: 90%;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: white;
+    font-size: 14px;
+    color: rgb(var(--primary-color));
+    background-position: right 10px center;
+    background-size: 16px;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+
 
 .select-box select:invalid {
     color: #888;
