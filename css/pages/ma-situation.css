@@ -213,7 +213,7 @@
 
 .situation__form__box input[type="text"]::placeholder{
     color: #aaa;
-    font-size: 12px;
+    font-size: 14px;
     font-style: italic;
 }
 
@@ -253,7 +253,7 @@
 
 .select-box select:invalid {
     color: #888;
-    font-size: 12px;
+    font-size: 14px;
     font-style: italic;
 }
   

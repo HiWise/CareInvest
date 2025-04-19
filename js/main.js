@@ -148,6 +148,21 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+flatpickr("#date-naissance", {
+    dateFormat: "d/m/Y",
+    locale: "fr",
+    allowInput: true,
+    disableMobile: true // <== Forcer le style même sur iOS / Android
+});
+  
+  flatpickr("#date-emprunt", {
+    dateFormat: "d/m/Y",
+    locale: "fr",
+    allowInput: true,
+    disableMobile: true
+});
+  
+
 
 // Formatage de l'affichage du clavier numérique //
 function formatTauxChamp(input) {
