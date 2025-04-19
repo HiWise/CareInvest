@@ -214,6 +214,7 @@
 .situation__form__box input[type="text"]::placeholder,
 .situation__form__box input[type="date"]::placeholder{
     color: #aaa;
+    font-size: 12px;
 }
 
 .situation__form__box input[type="text"]:focus,
@@ -221,6 +222,11 @@
     border-color: rgb(var(--primary-color));
     outline: none;
 }
+
+
+  
+  
+  
 
 
 
@@ -244,6 +250,13 @@
     cursor: pointer;
     transition: border-color 0.3s ease;
 }
+
+.select-box select:invalid {
+    color: #888;
+    font-size: 11px;
+    font-style: italic;
+}
+  
 
 .select-box select:focus {
     border-color: rgb(var(--primary-color));
