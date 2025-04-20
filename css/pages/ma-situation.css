@@ -300,3 +300,83 @@ input::-webkit-calendar-picker-indicator {
     box-sizing: border-box;
     transition: border-color 0.3s ease;
 }
+
+
+
+
+  /***********           FORM TABLEAU AMORTISSEMENT          **************/ 
+
+
+.amortissement {
+    display: none;
+    background-color: #f9f9f9;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    overflow-x: auto;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.amortissement.visible {
+    display: block;
+    opacity: 1;
+}
+
+
+.amortissement h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+    text-align: center;
+}
+
+.amortissement table {
+    width: 90%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+
+  
+.amortissement thead {
+    background-color: rgb(var(--third-color));
+}
+
+.amortissement th,
+.amortissement td {
+    padding: 0.75rem 1rem;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+  
+.amortissement tbody tr:nth-child(even) {
+    background-color: rgb(var(--third-color),0.3);
+}
+  
+
+.amortissement tbody tr:hover {
+    background-color: #e3f2fd;
+    transition: background-color 0.2s ease-in-out;
+}
+
+/* Responsive table scroll */
+@media (max-width: 768px) {
+    .amortissement {
+      padding: 1rem;
+    }
+  
+    .amortissement table {
+      font-size: 0.85rem;
+    }
+    .amortissement th,
+    .amortissement td {
+    padding: 0.3rem;
+    text-align: center;
+    border: 1px solid #ddd;
+    }
+}
+
+.situation__form-detail-financement{
+    padding-bottom: 30px;
+}
