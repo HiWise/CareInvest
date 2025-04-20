@@ -98,7 +98,7 @@
 
 .situation__form__intro__name input[type="text"] {
     width: 100%;
-    padding: 10px 5px;
+    padding: 10px 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
     font-size: 14px;
@@ -138,7 +138,7 @@
 
 .situation__form__title-detail-text{
     font-family: inter, sans-serif;
-    font-size: 15px;
+    font-size: 16px;
 }
 
   /***********           FORM-SECTIONS-CONTENT          **************/ 
@@ -205,7 +205,7 @@
     padding: 10px 30px;
     border: 1px solid #ccc;
     border-radius: 8px;
-    font-size: 14px;
+    font-size: 16px;
     box-sizing: border-box;
     transition: border-color 0.3s ease;
 }
@@ -236,7 +236,7 @@
     border-radius: 8px;
     border: 1px solid #ccc;
     background-color: white;
-    font-size: 14px;
+    font-size: 16px;
     color: rgb(var(--primary-color));
     appearance: none; /* enlève la flèche par défaut */
     -webkit-appearance: none;
@@ -259,7 +259,7 @@ input::-webkit-calendar-picker-indicator {
     border-radius: 8px;
     border: 1px solid #ccc;
     background-color: white;
-    font-size: 14px;
+    font-size: 16px;
     color: rgb(var(--primary-color));
     background-position: right 10px center;
     background-size: 16px;
@@ -296,7 +296,7 @@ input::-webkit-calendar-picker-indicator {
     padding: 10px 30px;
     border: 1px solid #ccc;
     border-radius: 8px;
-    font-size: 14px;
+    font-size: 16px;
     box-sizing: border-box;
     transition: border-color 0.3s ease;
 }

@@ -188,11 +188,14 @@
         gap: 20px;
     }
 
+    .situation__form__intro__name input[type="text"] {
+        max-width: 80%;
+    }
 
     .amortissement {
-        padding-left: 1rem;
-        padding-right: 1rem;
-        max-width: 300px;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        max-width: 90%;
     }
 
     .amortissement th,
