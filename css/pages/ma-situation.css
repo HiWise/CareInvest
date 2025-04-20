@@ -309,23 +309,31 @@ input::-webkit-calendar-picker-indicator {
 
 .amortissement {
     display: none;
+    width: 100%;
     background-color: #f9f9f9;
+    justify-content: center;
+    align-items: center;
     border-radius: 1rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     overflow-x: auto;
     opacity: 0;
     transition: opacity 0.3s ease;
+    
 }
 
 .amortissement.visible {
-    display: block;
     opacity: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
 }
 
 
-.amortissement h3 {
-    font-size: 1.6rem;
-    margin-bottom: 1.5rem;
+.amortissement__title {
+    font-size: 1.3rem;
+    font-family: var(--Kaisei);
+    padding: 20px;
     color: #333;
     text-align: center;
 }
@@ -339,42 +347,44 @@ input::-webkit-calendar-picker-indicator {
 
   
 .amortissement thead {
-    background-color: rgb(var(--third-color));
+    background-color: rgb(var(--primary-color));
+    color: rgb(var(--third-color));
 }
 
 .amortissement th,
 .amortissement td {
-    padding: 0.75rem 1rem;
+    padding: 0rem 0.5rem;
     text-align: center;
     border: 1px solid #ddd;
+    height: 2rem;
+}
+
+.amortissement th{
+    padding: 0.5rem 0.5rem;
 }
 
   
 .amortissement tbody tr:nth-child(even) {
-    background-color: rgb(var(--third-color),0.3);
+    background-color: rgb(var(--third-color),0.7);
 }
   
-
 .amortissement tbody tr:hover {
     background-color: #e3f2fd;
     transition: background-color 0.2s ease-in-out;
 }
 
-/* Responsive table scroll */
-@media (max-width: 768px) {
-    .amortissement {
-      padding: 1rem;
-    }
-  
-    .amortissement table {
-      font-size: 0.85rem;
-    }
-    .amortissement th,
-    .amortissement td {
-    padding: 0.3rem;
-    text-align: center;
-    border: 1px solid #ddd;
-    }
+.amortissement table thead tr th:first-child {
+    border-top-left-radius: 0.5rem;
+}
+.amortissement table thead tr th:last-child {
+    border-top-right-radius: 0.5rem;
+}
+
+.amortissement table tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 0.5rem;
+}
+.amortissement table tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 0.5rem;
 }
 
 .situation__form-detail-financement{

@@ -142,3 +142,41 @@ setInterval(() => {
         amortissementTable.classList.toggle('visible', shouldShow);
     }
 }, 300);
+
+function formatNombre(nombre) {
+    return new Intl.NumberFormat('fr-FR', {
+        style: 'decimal',
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0
+    }).format(nombre);
+}
+
+function formaterTableauAmortissement() {
+    const lignes = document.querySelectorAll('#amortissement-body tr');
+
+    lignes.forEach(ligne => {
+        const cellules = ligne.querySelectorAll('td');
+
+        // On commence à 1 pour éviter de toucher à la colonne "Année"
+        for (let i = 1; i < cellules.length; i++) {
+            const contenu = cellules[i].textContent.replace(/[^\d]/g, '');
+            if (!isNaN(contenu) && contenu !== '') {
+                cellules[i].textContent = `${formatNombre(contenu)} €`;
+            }
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    // attendre que le tableau soit rempli
+    const observer = new MutationObserver(() => {
+        formaterTableauAmortissement();
+    });
+
+    const amortissementBody = document.getElementById('amortissement-body');
+    if (amortissementBody) {
+        observer.observe(amortissementBody, { childList: true });
+    }
+});
+
+

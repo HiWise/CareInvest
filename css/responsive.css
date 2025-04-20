@@ -188,6 +188,45 @@
         gap: 20px;
     }
 
+
+    .amortissement {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        max-width: 300px;
+    }
+
+    .amortissement th,
+    .amortissement td {
+      text-align: center;
+      font-size: 0.6rem;
+      border: 1px solid #ddd;
+    }
+
+    .amortissement th{
+        font-size: 0.5rem;
+    }
+
+    .amortissement-annee {
+        width: 10%;
+    }
+
+    .amortissement-interets{
+        min-width: 45px;
+    }
+    
+    .amortissement-assurance {
+        width: 20%;
+        max-width: 40px;
+    }
+    
+    .amortissement-cap-cumulee,
+    .amortissement-cap-restant {
+        width: 30%;
+        min-width: 50px;
+    }
+    
+
+
 }
 
 
