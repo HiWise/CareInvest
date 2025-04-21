@@ -10,6 +10,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const financementSelect = document.getElementById('type-financement');
     const detailFinancementSection = document.getElementById('detail-financment-fields');
 
+    const mensualiteInput = document.getElementById('mensualité');
+    const amortissementSection = document.getElementById('amortissement-section');
+    const amortissementContent = amortissementSection.querySelector('.situation__form__content');
+    const amortissementArrow = amortissementSection.querySelector('.arrow-down');
+    const amortissementTable = amortissementSection.querySelector('.amortissement');
+    const header = amortissementSection.querySelector('.situation__form__up');
+
     // === Utilitaire : toggle class "visible" selon condition ===
     const toggleVisible = (el, condition) => {
         el.classList.toggle('visible', condition);
@@ -20,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         toggleVisible(conjointBox, matrimonialSelect.value === 'marie');
     });
 
-    // === 2. Affichage champs résidence (loyer ou bloc propriétaire) ===
+    // === 2. Affichage champs résidence ===
     residenceSelect.addEventListener('change', () => {
         const value = residenceSelect.value;
         toggleVisible(loyerBox, value === 'Locataire');
@@ -30,7 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
             financementSelect.value = "";
             detailFinancementSection.classList.remove('visible');
         }
-        
     });
 
     // === 3. Affichage section détail financement ===
@@ -53,18 +59,54 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.taux-input').forEach(formatTauxInput);
     document.querySelectorAll('.euro-input').forEach(formatEuroInput);
 
-    // 6. Toggle affichage amortissement via flèche
-    const amortissementToggle = document.getElementById('amortissement-toggle');
-    const amortissementContent = document.querySelector('#amortissement-section .situation__form__content');
-    const amortissementArrow = amortissementToggle.querySelector('.arrow-down');
-
-    amortissementToggle.addEventListener('click', () => {
+    // === 6. Toggle affichage section amortissement via flèche ===
+    document.getElementById('amortissement-toggle').addEventListener('click', () => {
         amortissementContent.classList.toggle('collapsed');
         amortissementArrow.classList.toggle('rotated');
     });
 
+    // === 7. Observer remplissage tableau amortissement ===
+    const observer = new MutationObserver(() => {
+        formaterTableauAmortissement();
+    });
 
-    
+    const amortissementBody = document.getElementById('amortissement-body');
+    if (amortissementBody) {
+        observer.observe(amortissementBody, { childList: true });
+    }
+
+    // === 8. Affichage automatique du tableau si mensualité > 0 ===
+    let previousMensualite = '';
+
+    setInterval(() => {
+        const value = mensualiteInput.value.trim();
+        const num = getNumericValue(mensualiteInput);
+
+        if (value !== previousMensualite) {
+            previousMensualite = value;
+
+            const isProprietaire = residenceSelect.value === 'Proprietaire';
+            const isCredit = financementSelect.value === 'credit';
+            const shouldShow = num > 0 && isProprietaire && isCredit;
+            
+
+            amortissementSection.classList.toggle('visible', shouldShow);
+            amortissementTable.classList.remove('visible'); // reste replié par défaut
+            amortissementArrow.classList.toggle('rotated', !shouldShow);
+
+        }
+
+    }, 300);
+
+    // === 9. Toggle repli / dépli du tableau ===
+    header.addEventListener('click', () => {
+        if (!amortissementSection.classList.contains('visible')) return;
+        amortissementTable.classList.toggle('visible');
+        amortissementArrow.classList.toggle('rotated');
+    });
+
+    // Appel initial
+    toggleAmortissementVisibility();
 });
 
 // === Formatage des taux (%) ===
@@ -115,15 +157,7 @@ function formatEuroInput(input) {
     });
 }
 
-// === Extraction propre des valeurs numériques pour calculs ===
-/**
- * Extrait proprement la valeur numérique d’un input formaté (€ ou %).
- * @param {string|HTMLElement} input - ID ou élément <input>.
- * @param {Object} options
- * @param {boolean} [options.percentage=false] - Divise par 100 si c’est un pourcentage.
- * @param {boolean} [options.allowDecimals=true] - Autorise les décimales.
- * @returns {number}
- */
+// === Extraction propre des valeurs numériques ===
 function getNumericValue(input, { percentage = false, allowDecimals = true } = {}) {
     const el = typeof input === 'string' ? document.getElementById(input) : input;
     if (!el) return 0;
@@ -139,25 +173,7 @@ function getNumericValue(input, { percentage = false, allowDecimals = true } = {
     return percentage ? value / 100 : value;
 }
 
-let previousMensualite = '';
-
-// Afficher la section complète si mensualité > 0
-const mensualiteInput = document.getElementById('mensualité');
-const amortissementSection = document.getElementById('amortissement-section');
-
-const toggleAmortissementVisibility = () => {
-    const num = getNumericValue(mensualiteInput);
-    amortissementSection.classList.toggle('visible', num > 0);
-};
-
-['input', 'change'].forEach(event =>
-    mensualiteInput.addEventListener(event, toggleAmortissementVisibility)
-);
-
-// Appel initial au chargement
-toggleAmortissementVisibility();
-
-
+// === Formattage des cellules du tableau d’amortissement ===
 function formatNombre(nombre) {
     return new Intl.NumberFormat('fr-FR', {
         style: 'decimal',
@@ -171,8 +187,6 @@ function formaterTableauAmortissement() {
 
     lignes.forEach(ligne => {
         const cellules = ligne.querySelectorAll('td');
-
-        // On commence à 1 pour éviter de toucher à la colonne "Année"
         for (let i = 1; i < cellules.length; i++) {
             const contenu = cellules[i].textContent.replace(/[^\d]/g, '');
             if (!isNaN(contenu) && contenu !== '') {
@@ -182,53 +196,50 @@ function formaterTableauAmortissement() {
     });
 }
 
+const toggleAmortissementVisibility = () => {
+    const num = getNumericValue(mensualiteInput);
+    const isProprietaire = residenceSelect.value === 'Proprietaire';
+    const isCredit = financementSelect.value === 'credit';
+
+    const shouldShow = num > 0 && isProprietaire && isCredit;
+
+    amortissementSection.classList.toggle('visible', shouldShow);
+};
+
+// Partie qui permet de faire disparaitre le tableau si changement section parent
 document.addEventListener('DOMContentLoaded', () => {
-    // attendre que le tableau soit rempli
-    const observer = new MutationObserver(() => {
-        formaterTableauAmortissement();
-    });
-
-    const amortissementBody = document.getElementById('amortissement-body');
-    if (amortissementBody) {
-        observer.observe(amortissementBody, { childList: true });
-    }
-});
-
-
-//Affichage de la section tableau amortissement
-
-document.addEventListener('DOMContentLoaded', () => {
+    // === Sélecteurs principaux ===
+    const residenceSelect = document.getElementById('residence-select');
+    const financementSelect = document.getElementById('type-financement');
     const mensualiteInput = document.getElementById('mensualité');
-    const amortissementContainer = document.getElementById('amortissement-section');
-    const amortissementTable = amortissementContainer.querySelector('.amortissement');
-    const header = amortissementContainer.querySelector('.situation__form__up');
-    const arrow = amortissementContainer.querySelector('.arrow-down');
+    const amortissementSection = document.getElementById('amortissement-section');
+    
+    // === 1. Affichage du tableau d'amortissement selon les conditions ===
+    const toggleAmortissementVisibility = () => {
+        const mensualiteValue = parseFloat(mensualiteInput.value.replace(' €', '').replace(' ', '').replace(',', '.'));
+        const isProprietaire = residenceSelect.value === 'Proprietaire';
+        const isCredit = financementSelect.value === 'credit';
 
-    let previousMensualite = '';
+        // Vérifier les 3 conditions
+        const shouldShow = mensualiteValue > 0 && isProprietaire && isCredit;
 
-    setInterval(() => {
-        const value = mensualiteInput.value.trim();
-        const num = getNumericValue(mensualiteInput);
+        amortissementSection.classList.toggle('visible', shouldShow);
+    };
 
-        if (value !== previousMensualite) {
-            previousMensualite = value;
-            const shouldShow = num > 0;
-
-            amortissementContainer.classList.toggle('visible', shouldShow);
-            amortissementTable.classList.toggle('visible', shouldShow);
-            arrow.classList.toggle('rotated', shouldShow);
-        }
-    }, 300);
-
-    // Toggle repli/dépli
-    header.addEventListener('click', () => {
-        if (!amortissementContainer.classList.contains('visible')) return;
-        amortissementTable.classList.toggle('visible');
-        arrow.classList.toggle('rotated');
+    // === 2. Mise à jour de la visibilité du tableau d'amortissement lorsqu'une valeur change ===
+    residenceSelect.addEventListener('change', () => {
+        toggleAmortissementVisibility();
     });
+
+    financementSelect.addEventListener('change', () => {
+        toggleAmortissementVisibility();
+    });
+
+    mensualiteInput.addEventListener('input', () => {
+        toggleAmortissementVisibility();
+    });
+
+    // === 3. Initialisation de la visibilité du tableau au chargement de la page ===
+    toggleAmortissementVisibility();
 });
-
-
-
-
 
