@@ -137,22 +137,21 @@
                                         <label class="situation__form__box-label"> Situation particulière <span class="etoile">*</span></label>
                                         <div class="select-box">
                                             <select required>
-                                                <option value="" disabled selected hidden>Sélectionnez votre situation</option>
-                                                <option value="pas-particulière">Pas de situation particulière</option>
+                                                <option value="pas-particulière" selected>Aucune</option>
                                                 <option value="isolé">Parent isolé(e)</option>
                                                 <option value="seul-5-ans">Élevé seul(e) un enfant pendant 5 ans </option>
                                                 <option value="veuf/combattant">Veuf(ve) Invalide/Ancien combattant(e)</option>
                                             </select>
                                         </div>
                                     </div>
+                                    
                                 </div>
                                 <div class="situation__form_content_pairs">
                                     <div class="situation__form__box">
                                         <label class="situation__form__box-label"> Enfant(s) à charge(s) <span class="etoile">*</span></label>
                                         <div class="select-box">
                                             <select required>
-                                                <option value="" disabled selected hidden> Nombre d'enfant(s)</option>
-                                                <option value="0">0</option>
+                                                <option value="0" selected>0</option>
                                                 <option value="1">1</option>
                                                 <option value="2">2</option>
                                                 <option value="3">3</option>
@@ -170,8 +169,7 @@
                                         <label class="situation__form__box-label"> Enfant(s) à charge alternée(s) <span class="etoile">*</span></label>
                                         <div class="select-box">
                                             <select required>
-                                                <option value="" disabled selected hidden> Nombre d'enfant(s)</option>
-                                                <option value="0">0</option>
+                                                <option value="0" selected>0</option>
                                                 <option value="1">1</option>
                                                 <option value="2">2</option>
                                                 <option value="3">3</option>
@@ -352,11 +350,11 @@
                                         <table>
                                             <thead>
                                                 <tr>
-                                                    <th>Année</th>
-                                                    <th>Intérêts</th>
-                                                    <th>Assurance</th>
-                                                    <th>Capital Cumulé</th>
-                                                    <th>Capital Restant dû</th>
+                                                    <th class="amortissement-annee">Année</th>
+                                                    <th class="amortissement-interets">Intérêts</th>
+                                                    <th class="amortissement-assurance">Assurance</th>
+                                                    <th class="amortissement-cap-cumulee">Capital Cumulé</th>
+                                                    <th class="amortissement-cap-restant">Capital Restant dû</th>
                                                 </tr>
                                             </thead>
                                             <tbody id="amortissement-body"></tbody>

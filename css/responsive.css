@@ -115,6 +115,9 @@
 /***********          0-600 px   Téléphones      **************/ 
 
 @media(max-width: 600px){
+    body {
+        overflow-x: hidden;
+      }      
     /* MAIN */
     .main__hero-title{
         font-size: 18px;
@@ -195,17 +198,27 @@
     */
 
     .situation__form__intro__name input[type="text"] {
-        max-width: 80%;
+        max-width: 95%;
     }
 
     .amortissement {
         display: flex;
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
-        max-width: 90%;
-        width: 90%;
-        
+        flex-direction: column;
+        align-items: center;
+        overflow-x: auto; /* Garde le scroll si besoin */
+        width: 100%;
+        min-width: 300px;
+        max-width: 100%;
+        box-sizing: border-box; /* important */
     }
+
+    .amortissement table {
+        width: 100%;
+        max-width: 100%;
+        min-width: 300px; /* à adapter selon ton design */
+        box-sizing: border-box;
+    }
+      
 
     .amortissement th,
     .amortissement td {
@@ -218,25 +231,26 @@
         font-size: 0.5rem;
     }
 
-    
     .amortissement-annee {
         width: 10%;
     }
-
-    .amortissement-interets{
-        min-width: 41px;
+    
+    .amortissement-interets {
+        width: 10%;
+        min-width: 20px;
     }
     
     .amortissement-assurance {
-        width: 20%;
+        width: 15%;
         max-width: 40px;
     }
     
     .amortissement-cap-cumulee,
     .amortissement-cap-restant {
-        width: 30%;
-        min-width: 48px;
+        width: 20%;
+        min-width: 40px;
     }
+    
 
 
 }

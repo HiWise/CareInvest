@@ -243,3 +243,12 @@ document.addEventListener('DOMContentLoaded', () => {
     toggleAmortissementVisibility();
 });
 
+document.querySelectorAll('input, select, textarea').forEach((field, index, fields) => {
+    field.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            e.preventDefault(); // évite de soumettre le formulaire ou autre effet par défaut
+            const nextField = fields[index + 1];
+            if (nextField) nextField.focus();
+        }
+    });
+});

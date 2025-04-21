@@ -1,94 +1,104 @@
+/* ===============================================
+   GLOBAL STYLES
+=============================================== */
+
+/* Box Sizing */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Collapsible Box */
 .collapsible-box {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out;
-  opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out;
 }
 
 .collapsible-box.visible {
-  max-height: max-content; /* ajuste selon la hauteur de ton champ */
-  opacity: 1;
+    max-height: max-content;
+    opacity: 1;
 }
 
 
-/***********           MAIN          **************/ 
+/***********           MAIN          **************/
 
-.ma-situation .main{
+/* Main Section */
+.ma-situation .main {
     padding: 0;
-    background-color: rgb(var(--primary-color),0.18);
+    background-color: rgb(var(--primary-color), 0.18);
 }
 
-.ma-situation .main__container{
-    justify-content: space-between; /* A REVOIR */
+/* Main Container */
+.ma-situation .main__container {
+    justify-content: space-between;
 }
 
-/***********           HERO          **************/ 
+/***********           HERO          **************/
 
-.ma-situation .main__hero{
-    background-color: rgb(var(--primary-color));
+/* Hero Section */
+.ma-situation .main__hero {
     background-image: none;
+    background-color: rgb(var(--primary-color));
     justify-content: center;
     height: 150px;
+    transition: opacity 0.6s ease-in-out, transform 0.6s ease-out;
 }
 
-.ma-situation .main__hero-title{
+.ma-situation .main__hero-title {
     color: rgb(var(--third-color));
     padding: 10px;
     font-size: 30px;
 }
 
-.ma-situation .main__hero-title,
-.ma-situation .main__hero{
-    transition: opacity 0.6s ease-in-out, transform 0.6s ease-out;
-}
+/***********           ETOILES          **************/
 
-/***********           ETOILES          **************/ 
-
-.etoile{
+.etoile {
     color: red;
 }
 
-/***********           FORM          **************/ 
+/***********           FORM          **************/
 
-.situation__form{
+/* Form Section */
+.situation__form {
     width: 100%;
     display: flex;
     justify-content: center;
     padding-bottom: 50px;
 }
 
-.situation__form__container{
+.situation__form__container {
     width: 100%;
     max-width: 800px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding: 0px 20px;
+    padding: 0 20px;
     gap: 20px;
 }
 
-/***********           FORM-INTRO          **************/ 
+/***********           FORM INTRO          **************/
 
-.situation___form__intro{
+.situation___form__intro {
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 40px;
-    padding: 20px 0px;
+    padding: 20px 0;
     text-align: start;
 }
 
-.situation__form__intro__obligatoire{
+.situation__form__intro__obligatoire {
     font-size: var(--body-font-size);
     text-align: start;
 }
 
-.situation__form__intro__name{
+.situation__form__intro__name {
     width: 95%;
     display: flex;
     flex-direction: column;
 }
-  
+
 .situation__form__intro__name-label {
     font-size: 16px;
     color: rgb(var(--primary-color));
@@ -106,52 +116,55 @@
 
 .situation__form__intro__name input[type="text"]::placeholder {
     color: #aaa;
+    font-size: 14px;
+    font-style: italic;
 }
+
 .situation__form__intro__name input[type="text"]:focus {
     border-color: #666;
     outline: none;
 }
-  
-  /***********           FORM-SECTIONS-UP          **************/ 
 
-.situation__form__up{
+/***********           FORM SECTIONS UP          **************/
+
+.situation__form__up {
     display: flex;
     justify-content: space-between;
-    padding: 10px 0px;
-    border-bottom: solid 1px rgb(var(--primary-color),0.4);
+    padding: 10px 0;
+    border-bottom: solid 1px rgb(var(--primary-color), 0.4);
 }
 
-.situation__form__title-text{
+.situation__form__title-text {
     font-family: var(--Kaisei);
     font-size: 18px;
 }
 
-.arrow-down{
+.arrow-down {
     width: 20px;
     height: 20px;
     transition: transform 0.3s ease;
 }
+
 .situation__form__section.active .arrow-down {
     transform: rotate(180deg);
 }
 
-.situation__form__title-detail-text{
+.situation__form__title-detail-text {
     font-family: var(--Kaisei);
-    font-weight: 700;
+    font-weight: 400;
     font-size: 16px;
+    font-style: italic;
 }
 
-  /***********           FORM-SECTIONS-CONTENT          **************/ 
+/***********           FORM SECTIONS CONTENT          **************/
 
-.situation__form__section{
+.situation__form__section {
     width: 100%;
-    justify-content: center;
     display: flex;
     flex-direction: column;
 }
 
-
-.situation__form__content{
+.situation__form__content {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -163,47 +176,41 @@
     transition: max-height 0.4s ease-in-out;
 }
 
-
 .situation__form__content.collapsed {
     max-height: 0;
     padding-top: 0;
     gap: 0;
-    overflow: hidden;
     opacity: 0;
     transition: all 0.3s ease;
 }
-  
-.arrow-down {
-    transition: transform 0.5s ease;
-}
-  
+
+/* Rotating Arrow */
 .arrow-down.rotated {
     transform: rotate(180deg);
 }
-  /***********           FORM-SECTIONS-BOXES          **************/
 
-  /***********           FORM-SECTIONS-TEXT-BOX          **************/ 
+/***********           FORM SECTIONS BOXES          **************/
 
-.situation__form__box{
+/* Text Input Box */
+.situation__form__box {
     width: 100%;
     display: flex;
     flex-direction: column;
 }
 
-
-.situation__form_content_pairs{
+.situation__form_content_pairs {
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
 
-.situation__form__box-label{
+.situation__form__box-label {
     font-size: 16px;
     color: rgb(var(--primary-color));
     margin-bottom: 0.5rem;
 }
 
-.situation__form__box input[type="text"]{
+.situation__form__box input[type="text"] {
     width: 90%;
     padding: 10px 30px;
     border: 1px solid #ccc;
@@ -213,38 +220,36 @@
     transition: border-color 0.3s ease;
 }
 
-.situation__form__box input[type="text"]::placeholder{
+.situation__form__box input[type="text"]::placeholder {
     color: #aaa;
     font-size: 14px;
     font-style: italic;
 }
 
-.situation__form__box input[type="text"]:focus{
+.situation__form__box input[type="text"]:focus {
     border-color: rgb(var(--primary-color));
     outline: none;
 }
 
+/***********           FORM SELECT BOX          **************/
 
-  
-  
-  
-
-
-
-  /***********           FORM-SECTIONS-SELECT-BOX          **************/ 
+.select-box {
+    position: relative;
+}
 
 .select-box select {
     width: 90%;
     padding: 10px 15px;
+    padding-left: 30px;
     border-radius: 8px;
     border: 1px solid #ccc;
     background-color: white;
     font-size: 16px;
     color: rgb(var(--primary-color));
-    appearance: none; /* enlève la flèche par défaut */
+    appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-    background-image: url('../../assets/arrow-down.svg'); /* icône personnalisée */
+    background-image: url('../../assets/arrow-down.svg');
     background-repeat: no-repeat;
     background-position: right 10px center;
     background-size: 16px;
@@ -252,10 +257,19 @@
     transition: border-color 0.3s ease;
 }
 
-input::-webkit-calendar-picker-indicator {
-    display: none !important;
+.select-box select:invalid {
+    color: #aaa;
+    font-size: 14px;
+    font-style: italic;
+    padding-left: 20px;
 }
 
+.select-box select:focus {
+    border-color: rgb(var(--primary-color));
+    outline: none;
+}
+
+/* Date Picker */
 #date-naissance {
     width: 90%;
     padding: 10px 30px;
@@ -270,30 +284,7 @@ input::-webkit-calendar-picker-indicator {
     transition: border-color 0.3s ease;
 }
 
-
-
-.select-box select:invalid {
-    color: #888;
-    font-size: 14px;
-    font-style: italic;
-    padding-left: 20px;
-}
-  
-
-.select-box select:focus {
-    border-color: rgb(var(--primary-color));
-    outline: none;
-}
-
-.select-box {
-    position: relative;
-}
-
-.select-box select:invalid {
-    color: #aaa;
-}
-
-  /***********           FORM-SECTIONS-NUMBERS          **************/ 
+/***********           FORM NUMBER INPUTS          **************/
 
 .situation__form__box input[type="number"] {
     width: 90%;
@@ -305,15 +296,12 @@ input::-webkit-calendar-picker-indicator {
     transition: border-color 0.3s ease;
 }
 
-
-
-
-  /***********           FORM TABLEAU AMORTISSEMENT          **************/ 
-
+/***********           AMORTISSEMENT TABLE          **************/
 
 .amortissement {
     display: none;
     width: 90%;
+    max-width: 100%;
     background-color: none;
     justify-content: center;
     align-items: center;
@@ -337,29 +325,19 @@ input::-webkit-calendar-picker-indicator {
 }
 
 .amortissement table {
-    width: 90%;
+    width: 100%;
+    max-width: 100%;
     border-collapse: collapse;
     background-color: #f9f9f9;
-    align-items: flex-start;
-    justify-content: center;
     font-size: 0.95rem;
     border-radius: 1rem;
 }
 
-#amortissement-toggle {
-    display: flex;
-    justify-content: space-between; /* Pour laisser l'en-tête non centré */
-    align-items: center;
-    padding: 10px;
-}
-
-
-  
+/* Table Header */
 .amortissement thead {
     background-color: rgb(var(--primary-color));
     color: rgb(var(--third-color));
 }
-
 
 .amortissement th,
 .amortissement td {
@@ -367,18 +345,25 @@ input::-webkit-calendar-picker-indicator {
     text-align: center;
     border: 1px solid #ddd;
     border-bottom: 0;
-    border-left: 0;
-    border-right: 0;
-
     height: 2rem;
 }
 
-.amortissement th{
+.amortissement th {
     padding: 0.5rem 0.5rem;
     border-top: 0;
+    border-left: 0;
+    border-right: 0;
 }
 
+.amortissement td:last-child {
+    border-right: 0;
+}
 
+.amortissement td:first-child {
+    border-left: 0;
+}
+
+/* Table Borders (First/Last Rows) */
 .amortissement thead tr th:first-child {
     border-top-left-radius: 0.5rem;
 }
@@ -395,18 +380,21 @@ input::-webkit-calendar-picker-indicator {
     border-bottom-left-radius: 0.5rem;
 }
 
+/* Table Row Styles */
 .amortissement tbody tr:nth-child(even) {
-    background-color: rgb(var(--third-color),0.7);
+    background-color: rgb(var(--third-color), 0.7);
 }
-  
+
 .amortissement tbody tr:hover {
-    background-color: rgb(var(--primary-color),0.9);
+    background-color: rgb(var(--primary-color), 0.9);
     color: rgb(var(--third-color));
     transition: background-color 0.2s ease-in-out;
     font-weight: 600;
 }
 
-.situation__form-detail-financement{
+/***********           FORM DETAIL FINANCEMENT          **************/
+
+.situation__form-detail-financement {
     padding-top: 20px;
     padding-bottom: 30px;
 }
