@@ -1,3 +1,9 @@
+document.getElementById('durée-emprunt').addEventListener('change', calculatemensualité);
+document.getElementById('montant-emprunt').addEventListener('input', calculatemensualité);
+document.getElementById('taux-assurances').addEventListener('input', calculatemensualité);
+document.getElementById('taux-emprunt').addEventListener('input', calculatemensualité);
+document.getElementById('date-emprunt').addEventListener('input', calculatemensualité);
+
 // Préremplissage automatique de la date si vide
 window.addEventListener('DOMContentLoaded', () => {
     const dateInput = document.getElementById('date-emprunt');
@@ -10,11 +16,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-document.getElementById('durée-emprunt').addEventListener('change', calculatemensualité);
-document.getElementById('montant-emprunt').addEventListener('input', calculatemensualité);
-document.getElementById('taux-assurances').addEventListener('input', calculatemensualité);
-document.getElementById('taux-emprunt').addEventListener('input', calculatemensualité);
-document.getElementById('date-emprunt').addEventListener('input', calculatemensualité);
+
 
 function calculatemensualité() {
     const duree = parseInt(document.getElementById('durée-emprunt').value) * 12;
@@ -33,7 +35,8 @@ function calculatemensualité() {
     }
 
     const assurance = tauxassurance * capital / 12;
-    const mensualite = Math.round((capital * taux / (1 - Math.pow(1 + taux, -duree)) + assurance) * 100) / 100;
+    const mensualiteSansAssurance = capital * taux / (1 - Math.pow(1 + taux, -duree));
+    const mensualite = mensualiteSansAssurance + assurance;
 
     document.getElementById('mensualité').value = `${mensualite.toFixed(2)} €`;
 
@@ -45,6 +48,7 @@ function calculatemensualité() {
     let cumulinteret = 0;
     let cumulcapital = 0;
     let cumulassurance = 0;
+    let interetPeriode = 0
     let tableau = '';
 
     let moisActuel = dateDebut.getMonth();
@@ -59,6 +63,7 @@ function calculatemensualité() {
         if (restant < 0) restant = 0;
 
         cumulinteret += interet;
+        interetPeriode += interet;
         cumulcapital += capitalrembourse;
         cumulassurance += assurance;
        
@@ -75,17 +80,17 @@ function calculatemensualité() {
         const estFinAnneeComplete = (moisDepuisDebut > moisDansPremiereAnnee) && ((moisDepuisDebut - (moisDansPremiereAnnee) + 1) % 12 === 0);
         const estDernierMois = i === duree;
 
-        if (estFinPremiereAnnee || estFinAnneeComplete || estDernierMois) {
-            const nbMoisDansPeriode = estDernierMois ? duree - moisDepuisDebut : 12;
+        if (estFinPremiereAnnee || estFinAnneeComplete || estDernierMois) { 
 
             tableau += `<tr>
                 <td>${anneeCounter}</td>
-                <td>${cumulinteret.toFixed(0)} €</td>
-                <td>${(cumulassurance.toFixed(0))} €</td>
+                <td>${interetPeriode.toFixed(0)} €</td>
+                <td>${cumulassurance.toFixed(0)} €</td>
                 <td>${cumulcapital.toFixed(0)} €</td>
                 <td>${restant.toFixed(0)} €</td>
             </tr>`;
 
+            interetPeriode = 0
             cumulassurance = 0;
             anneeCounter++;
         }
