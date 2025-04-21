@@ -10,7 +10,6 @@
   opacity: 1;
 }
 
-  
 
 /***********           MAIN          **************/ 
 
@@ -157,6 +156,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     padding-top: 20px;
     gap: 15px;
     overflow: hidden;
@@ -314,16 +314,16 @@ input::-webkit-calendar-picker-indicator {
 .amortissement {
     display: none;
     width: 90%;
-    background-color: #f9f9f9;
+    background-color: none;
     justify-content: center;
     align-items: center;
     border-radius: 1rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     overflow-x: auto;
     opacity: 0;
     transform: translateY(10px);
     transition: opacity 0.3s ease;
-    
+    padding-top: 30px;
+    margin: 0;
 }
 
 .amortissement.visible {
@@ -333,16 +333,24 @@ input::-webkit-calendar-picker-indicator {
     align-items: center;
     padding-bottom: 20px;
     transform: translateY(0);
+    margin: 0 auto;
 }
-
-
-
-
 
 .amortissement table {
     width: 90%;
     border-collapse: collapse;
+    background-color: #f9f9f9;
+    align-items: flex-start;
+    justify-content: center;
     font-size: 0.95rem;
+    border-radius: 1rem;
+}
+
+#amortissement-toggle {
+    display: flex;
+    justify-content: space-between; /* Pour laisser l'en-tête non centré */
+    align-items: center;
+    padding: 10px;
 }
 
 
@@ -358,35 +366,44 @@ input::-webkit-calendar-picker-indicator {
     padding: 0rem 0.5rem;
     text-align: center;
     border: 1px solid #ddd;
+    border-bottom: 0;
+    border-left: 0;
+    border-right: 0;
+
     height: 2rem;
 }
 
 .amortissement th{
     padding: 0.5rem 0.5rem;
+    border-top: 0;
 }
 
-  
+
+.amortissement thead tr th:first-child {
+    border-top-left-radius: 0.5rem;
+}
+
+.amortissement thead tr th:last-child {
+    border-top-right-radius: 0.5rem;
+}
+
+.amortissement tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 0.5rem;
+}
+
+.amortissement tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 0.5rem;
+}
+
 .amortissement tbody tr:nth-child(even) {
     background-color: rgb(var(--third-color),0.7);
 }
   
 .amortissement tbody tr:hover {
-    background-color: #e3f2fd;
+    background-color: rgb(var(--primary-color),0.9);
+    color: rgb(var(--third-color));
     transition: background-color 0.2s ease-in-out;
-}
-
-.amortissement table thead tr th:first-child {
-    border-top-left-radius: 0.5rem;
-}
-.amortissement table thead tr th:last-child {
-    border-top-right-radius: 0.5rem;
-}
-
-.amortissement table tbody tr:last-child td:first-child {
-    border-bottom-left-radius: 0.5rem;
-}
-.amortissement table tbody tr:last-child td:last-child {
-    border-bottom-right-radius: 0.5rem;
+    font-weight: 600;
 }
 
 .situation__form-detail-financement{
