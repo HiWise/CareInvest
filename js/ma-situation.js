@@ -52,6 +52,19 @@ document.addEventListener('DOMContentLoaded', () => {
     // === 5. Appliquer les formats aux inputs ===
     document.querySelectorAll('.taux-input').forEach(formatTauxInput);
     document.querySelectorAll('.euro-input').forEach(formatEuroInput);
+
+    // 6. Toggle affichage amortissement via flèche
+    const amortissementToggle = document.getElementById('amortissement-toggle');
+    const amortissementContent = document.querySelector('#amortissement-section .situation__form__content');
+    const amortissementArrow = amortissementToggle.querySelector('.arrow-down');
+
+    amortissementToggle.addEventListener('click', () => {
+        amortissementContent.classList.toggle('collapsed');
+        amortissementArrow.classList.toggle('rotated');
+    });
+
+
+    
 });
 
 // === Formatage des taux (%) ===
@@ -128,20 +141,22 @@ function getNumericValue(input, { percentage = false, allowDecimals = true } = {
 
 let previousMensualite = '';
 
-setInterval(() => {
-    const mensualiteInput = document.getElementById('mensualité');
-    const amortissementTable = document.querySelector('.amortissement');
-    const value = mensualiteInput.value.trim();
+// Afficher la section complète si mensualité > 0
+const mensualiteInput = document.getElementById('mensualité');
+const amortissementSection = document.getElementById('amortissement-section');
 
-    if (value !== previousMensualite) {
-        previousMensualite = value;
+const toggleAmortissementVisibility = () => {
+    const num = getNumericValue(mensualiteInput);
+    amortissementSection.classList.toggle('visible', num > 0);
+};
 
-        const num = getNumericValue(mensualiteInput);
-        const shouldShow = num > 0;
+['input', 'change'].forEach(event =>
+    mensualiteInput.addEventListener(event, toggleAmortissementVisibility)
+);
 
-        amortissementTable.classList.toggle('visible', shouldShow);
-    }
-}, 300);
+// Appel initial au chargement
+toggleAmortissementVisibility();
+
 
 function formatNombre(nombre) {
     return new Intl.NumberFormat('fr-FR', {
@@ -178,5 +193,42 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(amortissementBody, { childList: true });
     }
 });
+
+
+//Affichage de la section tableau amortissement
+
+document.addEventListener('DOMContentLoaded', () => {
+    const mensualiteInput = document.getElementById('mensualité');
+    const amortissementContainer = document.getElementById('amortissement-section');
+    const amortissementTable = amortissementContainer.querySelector('.amortissement');
+    const header = amortissementContainer.querySelector('.situation__form__up');
+    const arrow = amortissementContainer.querySelector('.arrow-down');
+
+    let previousMensualite = '';
+
+    setInterval(() => {
+        const value = mensualiteInput.value.trim();
+        const num = getNumericValue(mensualiteInput);
+
+        if (value !== previousMensualite) {
+            previousMensualite = value;
+            const shouldShow = num > 0;
+
+            amortissementContainer.classList.toggle('visible', shouldShow);
+            amortissementTable.classList.toggle('visible', shouldShow);
+            arrow.classList.toggle('rotated', shouldShow);
+        }
+    }, 300);
+
+    // Toggle repli/dépli
+    header.addEventListener('click', () => {
+        if (!amortissementContainer.classList.contains('visible')) return;
+        amortissementTable.classList.toggle('visible');
+        arrow.classList.toggle('rotated');
+    });
+});
+
+
+
 
 

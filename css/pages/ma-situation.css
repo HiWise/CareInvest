@@ -101,7 +101,7 @@
     padding: 10px 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
-    font-size: 14px;
+    font-size: 16px;
     transition: border-color 0.3s ease;
 }
 
@@ -115,16 +115,16 @@
   
   /***********           FORM-SECTIONS-UP          **************/ 
 
-  .situation__form__up{
+.situation__form__up{
     display: flex;
     justify-content: space-between;
     padding: 10px 0px;
     border-bottom: solid 1px rgb(var(--primary-color),0.4);
 }
 
-  .situation__form__title-text{
+.situation__form__title-text{
     font-family: var(--Kaisei);
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .arrow-down{
@@ -137,7 +137,8 @@
 }
 
 .situation__form__title-detail-text{
-    font-family: inter, sans-serif;
+    font-family: var(--Kaisei);
+    font-weight: 700;
     font-size: 16px;
 }
 
@@ -168,6 +169,8 @@
     padding-top: 0;
     gap: 0;
     overflow: hidden;
+    opacity: 0;
+    transition: all 0.3s ease;
 }
   
 .arrow-down {
@@ -255,7 +258,7 @@ input::-webkit-calendar-picker-indicator {
 
 #date-naissance {
     width: 90%;
-    padding: 10px 15px;
+    padding: 10px 30px;
     border-radius: 8px;
     border: 1px solid #ccc;
     background-color: white;
@@ -273,6 +276,7 @@ input::-webkit-calendar-picker-indicator {
     color: #888;
     font-size: 14px;
     font-style: italic;
+    padding-left: 20px;
 }
   
 
@@ -309,7 +313,7 @@ input::-webkit-calendar-picker-indicator {
 
 .amortissement {
     display: none;
-    width: 100%;
+    width: 90%;
     background-color: #f9f9f9;
     justify-content: center;
     align-items: center;
@@ -317,6 +321,7 @@ input::-webkit-calendar-picker-indicator {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     overflow-x: auto;
     opacity: 0;
+    transform: translateY(10px);
     transition: opacity 0.3s ease;
     
 }
@@ -327,16 +332,12 @@ input::-webkit-calendar-picker-indicator {
     flex-direction: column;
     align-items: center;
     padding-bottom: 20px;
+    transform: translateY(0);
 }
 
 
-.amortissement__title {
-    font-size: 1.3rem;
-    font-family: var(--Kaisei);
-    padding: 20px;
-    color: #333;
-    text-align: center;
-}
+
+
 
 .amortissement table {
     width: 90%;
@@ -350,6 +351,7 @@ input::-webkit-calendar-picker-indicator {
     background-color: rgb(var(--primary-color));
     color: rgb(var(--third-color));
 }
+
 
 .amortissement th,
 .amortissement td {
@@ -388,5 +390,6 @@ input::-webkit-calendar-picker-indicator {
 }
 
 .situation__form-detail-financement{
+    padding-top: 20px;
     padding-bottom: 30px;
 }

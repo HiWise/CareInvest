@@ -188,6 +188,12 @@
         gap: 20px;
     }
 
+    /*
+    .situation__form__container{
+        background-color: blue;
+    }
+    */
+
     .situation__form__intro__name input[type="text"] {
         max-width: 80%;
     }
@@ -209,12 +215,13 @@
         font-size: 0.5rem;
     }
 
+    
     .amortissement-annee {
         width: 10%;
     }
 
     .amortissement-interets{
-        min-width: 45px;
+        min-width: 41px;
     }
     
     .amortissement-assurance {
@@ -225,9 +232,8 @@
     .amortissement-cap-cumulee,
     .amortissement-cap-restant {
         width: 30%;
-        min-width: 50px;
+        min-width: 48px;
     }
-    
 
 
 }

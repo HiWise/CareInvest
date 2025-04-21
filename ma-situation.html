@@ -92,10 +92,10 @@
 
                         <div class="situation___form__intro">
                             <div class="situation__form__intro__obligatoire">
-                                <p> Les champs suivis d'une étoile (<span class="etoile">*</span>) sont obligatoires</p>
+                                <p> Les champs suivis d'une étoile <span class="etoile">*</span> sont obligatoires</p>
                             </div>
                             <div class="situation__form__intro__name">
-                                <label class="situation__form__intro__name-label">Nom de la situation (<span class="etoile">*</span>)</label>
+                                <label class="situation__form__intro__name-label">Nom de la situation <span class="etoile">*</span></label>
                                 <input type="text" placeholder="Entrez le nom de votre situation" required>
                             </div>
                         </div>
@@ -122,7 +122,7 @@
                                 </div>
                                 <div class="situation__form_content_pairs">
                                     <div class="situation__form__box">
-                                        <label class="situation__form__box-label"> Situation matrimonial (<span class="etoile">*</span>)</label>
+                                        <label class="situation__form__box-label"> Situation matrimonial <span class="etoile">*</span></label>
                                         <div class="select-box">
                                             <select id="matrimonial-select" name="situation-matrimoniale" required>
                                                 <option value="" disabled selected hidden>Sélectionnez votre statut</option>
@@ -134,7 +134,7 @@
                                         </div>
                                     </div>
                                     <div class="situation__form__box">
-                                        <label class="situation__form__box-label"> Situation particulière (<span class="etoile">*</span>)</label>
+                                        <label class="situation__form__box-label"> Situation particulière <span class="etoile">*</span></label>
                                         <div class="select-box">
                                             <select required>
                                                 <option value="" disabled selected hidden>Sélectionnez votre situation</option>
@@ -148,10 +148,10 @@
                                 </div>
                                 <div class="situation__form_content_pairs">
                                     <div class="situation__form__box">
-                                        <label class="situation__form__box-label"> Enfant(s) à charge(s) (<span class="etoile">*</span>)</label>
+                                        <label class="situation__form__box-label"> Enfant(s) à charge(s) <span class="etoile">*</span></label>
                                         <div class="select-box">
                                             <select required>
-                                                <option value="" disabled selected hidden> Sélectionnez le nombre d'enfant(s)</option>
+                                                <option value="" disabled selected hidden> Nombre d'enfant(s)</option>
                                                 <option value="0">0</option>
                                                 <option value="1">1</option>
                                                 <option value="2">2</option>
@@ -167,10 +167,10 @@
                                         </div>
                                     </div>
                                     <div class="situation__form__box">
-                                        <label class="situation__form__box-label"> Enfant(s) à charge alternée(s) (<span class="etoile">*</span>)</label>
+                                        <label class="situation__form__box-label"> Enfant(s) à charge alternée(s) <span class="etoile">*</span></label>
                                         <div class="select-box">
                                             <select required>
-                                                <option value="" disabled selected hidden> Sélectionnez le nombre d'enfant(s)</option>
+                                                <option value="" disabled selected hidden> Nombre d'enfant(s)</option>
                                                 <option value="0">0</option>
                                                 <option value="1">1</option>
                                                 <option value="2">2</option>
@@ -228,13 +228,13 @@
                             <div class="situation__form__content">
                                 <div class="situation__form_content_pairs">
                                     <div class="situation__form__box">
-                                        <label class="situation__form__box-label">Type de résidence (<span class="etoile">*</span>)</label>
+                                        <label class="situation__form__box-label">Type de résidence <span class="etoile">*</span></label>
                                         <div class="select-box">
                                             <select id="residence-select" required>
-                                                <option value="" disabled selected hidden>Propriétaire/Locataire/Logé</option>
+                                                <option value="" disabled selected hidden>Propriétaire/Locataire/Logé(e)</option>
                                                 <option value="Proprietaire">Propriétaire</option>
                                                 <option value="Locataire">Locataire</option>
-                                                <option value="loge-gratuit">Logé à titre gratuit</option>
+                                                <option value="loge-gratuit">Logé(e) à titre gratuit</option>
                                             </select>
                                         </div>
                                     </div>
@@ -243,9 +243,10 @@
                                         <input class="euro-input" type="text" inputmode="numeric" placeholder="1 200 €">
                                     </div>
                                 </div>
+                                
                                 <div id="proprietaire-fields" class="situation__form_content_pairs collapsible-box">
                                     <div class="situation__form__box">
-                                        <label class="situation__form__box-label">Type de financement (<span class="etoile">*</span>)</label>
+                                        <label class="situation__form__box-label">Type de financement <span class="etoile">*</span></label>
                                         <div class="select-box">
                                             <select id="type-financement" required>
                                                 <option value="" disabled selected hidden>Crédit/Financé</option>
@@ -263,96 +264,112 @@
                                         <input id="valeur-bien" name="valeur-bien" class="euro-input" type="text" inputmode="numeric" placeholder="300 000 €">
                                     </div>
                                 </div>
-                            </div>    
 
-                            <div id="detail-financment-fields" class="situation__form__section collapsible-box situation__form-detail-financement">
-                                <div class="situation__form__up">
-                                    <div class="situation__form__title">
-                                        <p class="situation__form__title-text situation__form__title-detail-text"> Détail financement crédit </p>
-                                    </div>
-                                    <div class="situation__form__arrows">
-                                        <img src="assets/arrow-down.svg" alt="arrow-down" class="arrow-down">
-                                    </div>
-                                </div>
-
-
-                                <div class="situation__form__content">
-                                    <div class="situation__form_content_pairs">
-                                        <div class="situation__form__box">
-                                            <label class="situation__form__box-label"> Date d'emprunt </label>
-                                            <input type="text" name="date-emprunt" id="date-emprunt" placeholder="jj/mm/aaaa">
+                                <div id="detail-financment-fields" class="situation__form__section collapsible-box situation__form-detail-financement">
+                                    <div class="situation__form__up">
+                                        <div class="situation__form__title">
+                                            <p class="situation__form__title-text situation__form__title-detail-text"> Détail financement crédit </p>
                                         </div>
-                                        <div class="situation__form__box">
-                                            <label class="situation__form__box-label">Montant emprunté</label>
-                                            <input class="euro-input" type="text" inputmode="numeric" placeholder="300 000 €" id="montant-emprunt" name="montant-emprunt">
+                                        <div class="situation__form__arrows">
+                                            <img src="assets/arrow-down.svg" alt="arrow-down" class="arrow-down">
                                         </div>
                                     </div>
-                                    <div class="situation__form_content_pairs">
-                                        <div class="situation__form__box">
-                                            <label class="situation__form__box-label">Durée d'emprunt </label>
-                                            <div class="select-box">
-                                                <select id="durée-emprunt" required>
-                                                    <option value="" disabled selected hidden>25 ans</option>
-                                                    <option value="25">25 ans</option>
-                                                    <option value="24">24 ans</option>
-                                                    <option value="23">23 ans</option>
-                                                    <option value="22">22 ans</option>
-                                                    <option value="21">21 ans</option>
-                                                    <option value="20">20 ans</option>
-                                                    <option value="19">19 ans</option>
-                                                    <option value="18">18 ans</option>
-                                                    <option value="17">17 ans</option>
-                                                    <option value="16">16 ans</option>
-                                                    <option value="15">15 ans</option>
-                                                    <option value="14">14 ans</option>
-                                                    <option value="13">13 ans</option>
-                                                    <option value="12">12 ans</option>
-                                                    <option value="11">11 ans</option>
-                                                    <option value="10">10 ans</option>
-                                                    <option value="9">9 ans</option>
-                                                    <option value="8">8 ans</option>
-                                                    <option value="7">7 ans</option>
-                                                    <option value="6">6 ans</option>
-                                                    <option value="5">5 ans</option>
-                                                    <option value="4">4 ans</option>
-                                                    <option value="3">3 ans</option>
-                                                    <option value="2">2 ans</option>
-                                                    <option value="1">1 an</option>
-                                                  </select>                                                  
+
+
+                                    <div class="situation__form__content">
+                                        <div class="situation__form_content_pairs">
+                                            <div class="situation__form__box">
+                                                <label class="situation__form__box-label"> Date d'emprunt </label>
+                                                <input type="text" name="date-emprunt" id="date-emprunt" placeholder="jj/mm/aaaa">
+                                            </div>
+                                            <div class="situation__form__box">
+                                                <label class="situation__form__box-label">Montant emprunté</label>
+                                                <input class="euro-input" type="text" inputmode="numeric" placeholder="300 000 €" id="montant-emprunt" name="montant-emprunt">
                                             </div>
                                         </div>
-                                        <div class="situation__form__box">
-                                            <label class="situation__form__box-label">Taux d'emprunt</label>
-                                            <input class="taux-input" type="text" inputmode="decimal" placeholder="2.43 %" id="taux-emprunt" name="taux-emprunt" pattern="[0-9]*[.,]?[0-9]*">
+                                        <div class="situation__form_content_pairs">
+                                            <div class="situation__form__box">
+                                                <label class="situation__form__box-label">Durée d'emprunt </label>
+                                                <div class="select-box">
+                                                    <select id="durée-emprunt" required>
+                                                        <option value="" disabled selected hidden>25 ans</option>
+                                                        <option value="25">25 ans</option>
+                                                        <option value="24">24 ans</option>
+                                                        <option value="23">23 ans</option>
+                                                        <option value="22">22 ans</option>
+                                                        <option value="21">21 ans</option>
+                                                        <option value="20">20 ans</option>
+                                                        <option value="19">19 ans</option>
+                                                        <option value="18">18 ans</option>
+                                                        <option value="17">17 ans</option>
+                                                        <option value="16">16 ans</option>
+                                                        <option value="15">15 ans</option>
+                                                        <option value="14">14 ans</option>
+                                                        <option value="13">13 ans</option>
+                                                        <option value="12">12 ans</option>
+                                                        <option value="11">11 ans</option>
+                                                        <option value="10">10 ans</option>
+                                                        <option value="9">9 ans</option>
+                                                        <option value="8">8 ans</option>
+                                                        <option value="7">7 ans</option>
+                                                        <option value="6">6 ans</option>
+                                                        <option value="5">5 ans</option>
+                                                        <option value="4">4 ans</option>
+                                                        <option value="3">3 ans</option>
+                                                        <option value="2">2 ans</option>
+                                                        <option value="1">1 an</option>
+                                                    </select>                                                  
+                                                </div>
+                                            </div>
+                                            <div class="situation__form__box">
+                                                <label class="situation__form__box-label">Taux d'emprunt</label>
+                                                <input class="taux-input" type="text" inputmode="decimal" placeholder="2.43 %" id="taux-emprunt" name="taux-emprunt" pattern="[0-9]*[.,]?[0-9]*">
+                                            </div>
+                                        </div>
+                                        <div class="situation__form_content_pairs">
+                                            <div class="situation__form__box">
+                                                <label class="situation__form__box-label"> Taux assurances </label>
+                                                <input class="taux-input" type="text" inputmode="decimal" placeholder="0.96%" name="taux-assurances" id="taux-assurances" pattern="[0-9]*[.,]?[0-9]*">
+                                            </div>
+                                            <div class="situation__form__box">
+                                                <label class="situation__form__box-label">Mensualité estimée</label>
+                                                <input type="text" id="mensualité" readonly placeholder="0 €">
+                                            </div>
+                                        </div>
+                                    </div>    
+                                </div>
+
+                                <div id="amortissement-section" class="situation__form__section collapsible-box">
+                                    <div class="situation__form__up" id="amortissement-toggle">
+                                        <div class="situation__form__title">
+                                            <p class="situation__form__title-text situation__form__title-detail-text"> Tableau d'amortissement </p>
+                                        </div>
+                                        <div class="situation__form__arrows">
+                                            <img src="assets/arrow-down.svg" alt="arrow-down" class="arrow-down">
                                         </div>
                                     </div>
-                                    <div class="situation__form_content_pairs">
-                                        <div class="situation__form__box">
-                                            <label class="situation__form__box-label"> Taux assurances </label>
-                                            <input class="taux-input" type="text" inputmode="decimal" placeholder="0.96%" name="taux-assurances" id="taux-assurances" pattern="[0-9]*[.,]?[0-9]*">
-                                        </div>
-                                        <div class="situation__form__box">
-                                            <label class="situation__form__box-label">Mensualité estimée</label>
-                                            <input type="text" id="mensualité" readonly placeholder="0 €">
-                                        </div>
+                                
+                                    <div class="amortissement situation__form__content">
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th>Année</th>
+                                                    <th>Intérêts</th>
+                                                    <th>Assurance</th>
+                                                    <th>Capital Cumulé</th>
+                                                    <th>Capital Restant dû</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="amortissement-body"></tbody>
+                                        </table>
                                     </div>
-                                </div>    
-                            </div>
-                            <div class="amortissement">
-                                <p class="amortissement__title">Tableau d'amortissement</p>
-                                <table>
-                                  <thead>
-                                    <tr>
-                                      <th class="amortissement-annee">Année</th>
-                                      <th class="amortissement-interets">Intérêts</th>
-                                      <th class="amortissement-assurance">Assurance</th>
-                                      <th class="amortissement-cap-cumulee">Capital Cumulée</th>
-                                      <th class="amortissement-cap-restant">Capital Restant dû</th>
-                                    </tr>
-                                  </thead>
-                                  <tbody id="amortissement-body"></tbody>
-                                </table>
-                            </div> 
+                                </div>
+                            </div>    
+
+
+
+                            
+                    
                         </div>  
                     </div>
                 </div>
