@@ -97,7 +97,6 @@ function calculatemensualité() {
         const classeMois = `mois-annee-${anneeCounter}`;
         const ligneMois = `<tr class="${classeMois}" style="background-color: #f9f9f9; display: none; transition: all 0.3s ease-in-out;">
             <td>${nomMois}</td>
-            <td>${mensualite.toFixed(0)} €</td>
             <td>${capitalrembourse.toFixed(0)} €</td>
             <td>${interet.toFixed(0)} €</td>
             <td>${assurance.toFixed(0)} €</td>
@@ -125,7 +124,6 @@ function calculatemensualité() {
 
             tableau += `<tr class="ligne-annee" data-target="mois-annee-${anneeCounter}" style="background-color:rgb(245, 243, 240); font-weight: bold; cursor: pointer;">
                 <td><span class="arrow">▸</span> ${anneeCounter}</td>
-                <td>${annuiteTotale.toFixed(0)} €</td>
                 <td>${cumulcapital.toFixed(0)} €</td>
                 <td>${interetPeriode.toFixed(0)} €</td>
                 <td>${cumulassurance.toFixed(0)} €</td>
