@@ -18,28 +18,28 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 // A supprimer c'est pour afficher le tableau directement pour les test, flemme de remettre des valeurs tout le temps
-window.addEventListener('DOMContentLoaded', () => {
-    const Asupprimer1 = document.getElementById('montant-emprunt');
-    if (!Asupprimer1.value) {
-        Asupprimer1.value = 265660
-    }
-});
+// window.addEventListener('DOMContentLoaded', () => {
+//     const Asupprimer1 = document.getElementById('montant-emprunt');
+//     if (!Asupprimer1.value) {
+//         Asupprimer1.value = 265660
+//     }
+// });
 
-// A supprimer c'est pour afficher le tableau directement pour les test, flemme de remettre des valeurs tout le temps
-window.addEventListener('DOMContentLoaded', () => {
-    const Asupprimer2 = document.getElementById('durée-emprunt');
-    if (!Asupprimer2.value) {
-        Asupprimer2.value = 25
-    }
-});
+// // A supprimer c'est pour afficher le tableau directement pour les test, flemme de remettre des valeurs tout le temps
+// window.addEventListener('DOMContentLoaded', () => {
+//     const Asupprimer2 = document.getElementById('durée-emprunt');
+//     if (!Asupprimer2.value) {
+//         Asupprimer2.value = 25
+//     }
+// });
 
-// A supprimer c'est pour afficher le tableau directement pour les test, flemme de remettre des valeurs tout le temps
-window.addEventListener('DOMContentLoaded', () => {
-    const Asupprimer3 = document.getElementById('taux-emprunt');
-    if (!Asupprimer3.value) {
-        Asupprimer3.value = 2.35
-    }
-});
+// // A supprimer c'est pour afficher le tableau directement pour les test, flemme de remettre des valeurs tout le temps
+// window.addEventListener('DOMContentLoaded', () => {
+//     const Asupprimer3 = document.getElementById('taux-emprunt');
+//     if (!Asupprimer3.value) {
+//         Asupprimer3.value = 2.35
+//     }
+// });
 
 function calculatemensualité() {
     const duree = parseInt(document.getElementById('durée-emprunt').value) * 12;
@@ -74,7 +74,6 @@ function calculatemensualité() {
     let interetPeriode = 0;
     let tableau = '';
     let anneeCounter = 1;
-
     let moisActuel = dateDebut.getMonth();
     let anneeActuelle = dateDebut.getFullYear();
 
@@ -119,8 +118,6 @@ function calculatemensualité() {
         const estDernierMois = i === duree;
 
         if (estFinPremiereAnnee || estFinAnneeComplete || estDernierMois) {
-            const nbMoisDansAnnee = (estFinPremiereAnnee ? moisDansPremiereAnnee : 12);
-            const annuiteTotale = mensualite * nbMoisDansAnnee;
 
             tableau += `<tr class="ligne-annee" data-target="mois-annee-${anneeCounter}" style="background-color:rgb(245, 243, 240); font-weight: bold; cursor: pointer;">
                 <td><span class="arrow">▸</span> ${anneeCounter}</td>
@@ -168,10 +165,7 @@ function calculatemensualité() {
             });
         });
     }, 0);
-
-
     
 }
-
 
 calculatemensualité();
